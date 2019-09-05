@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - GasketManager</title>
+
+
+
+
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.18/datatables.min.css" />
+    
+          @Scripts.Render("~/bundles/jquery")
+          @Scripts.Render("~/bundles/bootstrap")
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.18/datatables.min.js"></script>
+
+
+
+
+
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("GasketManager", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                @if (Session["AnvID"] != null)
+                {
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Grunddata<span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu" id="myTab">
+                            <li>@Html.ActionLink("Material", "Index", "Material")</li>
+                            <li>@Html.ActionLink("Materialstorlek", "MaterialSizeIndex", "MaterialSize")</li>
+                            <li>@Html.ActionLink("Materialtjocklek", "MaterialThicknIndex", "MaterialThickn")</li>
+                            <li>@Html.ActionLink("Timdebitering mm", "CostIndex", "Cost")</li>
+                            <li>@Html.ActionLink("Återanvändbar procent", "ReuseMatIndex", "ReuseMat")</li>
+                        </ul>
+                    </li>
+                    <li>@Html.ActionLink("Packningar", "GasketIndex", "Gasket")</li>
+                    @if (Convert.ToInt32(Session["accessLevel"]) == 10)
+                    {
+                        <li>@Html.ActionLink("Användare", "UserIndex", "User")</li>
+                    }                    
+                </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#">Välkommen : @Session["reparator"]  </a></li>
+                        <li><a href="/Home/Logout">Logout</a></li>
+                    </ul>
+                }
+                else
+                {
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/Home/Login">Login</a></li>
+                    </ul>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Indentive AB</p>
+        </footer>
+    </div>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

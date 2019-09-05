@@ -1,0 +1,73 @@
+﻿@model GaskMan.Models.CLogin
+
+@{
+    ViewBag.Title = "Login";
+}
+
+
+<div class="panel panel-body">
+    <input type="hidden" id="firstTime" value="1" />
+    <div class="col-sm-9 col-md-9 col-ld-9">
+
+        <form id="myForm">
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <h4>Login</h4>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                    @Html.TextBoxFor(m => m.AnvID, new { @class = "form-control", @placeholder = "Användarnamn" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                    @Html.PasswordFor(m => m.pwd, new { @class = "form-control", @placeholder = "Lösenord" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-12 col-md-12 col-lg-12" id="ErrorTextId" style="color:red">
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-12" id="loginUrlId">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                    <a href="#" id="idBtnLogin"class="btn btn-success " onclick="LoginUser()">Login</a>
+                    <a href="/Home/Index" class="btn btn-info ">Avbryt</a>
+                </div>
+            </div>
+        </form>
+
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-waitingfor/1.2.7/bootstrap-waitingfor.min.js"></script>
+
+<script>
+
+    $(document).ready(function () {
+        $("#idBtnLogin").focus();
+    });
+
+
+    var LoginUser = function () {
+        var data = $("#myForm").serialize();
+        $("#ErrorTextId").html("");
+        $.post("/Home/LoginUser", data, function (response) {
+            if (response.errorMessage == "")
+                window.location.href = "/Home/Index";
+            else {
+                $("#pwd").val("");
+                $("#ErrorTextId").html("<span>" + response.errorMessage + "</span>");
+            }                
+
+        }, 'json');
+
+    }
+
+
+</script>
+

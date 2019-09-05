@@ -1,0 +1,1342 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="SmServ" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="BasicHttpBinding_ISmServ_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsoma:OptimizedMimeSerialization xmlns:wsoma="http://schemas.xmlsoap.org/ws/2004/09/policy/optimizedmimeserialization" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:49962/SmServ.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:49962/SmServ.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:49962/SmServ.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SManApi" />
+      <xsd:import schemaLocation="http://localhost:49962/SmServ.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/Message" />
+      <xsd:import schemaLocation="http://localhost:49962/SmServ.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:49962/SmServ.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/System.Collections.Generic" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ISmServ_login_InputMessage">
+    <wsdl:part name="parameters" element="tns:login" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:loginResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getReparator_InputMessage">
+    <wsdl:part name="parameters" element="tns:getReparator" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getReparator_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getReparatorResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getReparators_InputMessage">
+    <wsdl:part name="parameters" element="tns:getReparators" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getReparators_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getReparatorsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_gGetReparators_InputMessage">
+    <wsdl:part name="parameters" element="tns:gGetReparators" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_gGetReparators_OutputMessage">
+    <wsdl:part name="parameters" element="tns:gGetReparatorsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getServHuvForUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:getServHuvForUser" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getServHuvForUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getServHuvForUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getServHuv_InputMessage">
+    <wsdl:part name="parameters" element="tns:getServHuv" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getServHuv_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getServHuvResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getAllServRad_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAllServRad" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getAllServRad_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAllServRadResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getServRad_InputMessage">
+    <wsdl:part name="parameters" element="tns:getServRad" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getServRad_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getServRadResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_saveServRad_InputMessage">
+    <wsdl:part name="parameters" element="tns:saveServRad" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_saveServRad_OutputMessage">
+    <wsdl:part name="parameters" element="tns:saveServRadResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getVentil_InputMessage">
+    <wsdl:part name="parameters" element="tns:getVentil" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getVentil_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getVentilResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getVentilsForCust_InputMessage">
+    <wsdl:part name="parameters" element="tns:getVentilsForCust" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getVentilsForCust_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getVentilsForCustResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_saveVentil_InputMessage">
+    <wsdl:part name="parameters" element="tns:saveVentil" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_saveVentil_OutputMessage">
+    <wsdl:part name="parameters" element="tns:saveVentilResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getVentilKategorier_InputMessage">
+    <wsdl:part name="parameters" element="tns:getVentilKategorier" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getVentilKategorier_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getVentilKategorierResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getFabrikat_InputMessage">
+    <wsdl:part name="parameters" element="tns:getFabrikat" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getFabrikat_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getFabrikatResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getDn_InputMessage">
+    <wsdl:part name="parameters" element="tns:getDn" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getDn_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getDnResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getPn_InputMessage">
+    <wsdl:part name="parameters" element="tns:getPn" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getPn_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getPnResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getArtList_InputMessage">
+    <wsdl:part name="parameters" element="tns:getArtList" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getArtList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getArtListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getArtikel_InputMessage">
+    <wsdl:part name="parameters" element="tns:getArtikel" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getArtikel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getArtikelResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getReservdelsForServiceRad_InputMessage">
+    <wsdl:part name="parameters" element="tns:getReservdelsForServiceRad" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getReservdelsForServiceRad_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getReservdelsForServiceRadResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getReservdel_InputMessage">
+    <wsdl:part name="parameters" element="tns:getReservdel" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getReservdel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getReservdelResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_saveReservdel_InputMessage">
+    <wsdl:part name="parameters" element="tns:saveReservdel" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_saveReservdel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:saveReservdelResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getOpenDates_InputMessage">
+    <wsdl:part name="parameters" element="tns:getOpenDates" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getOpenDates_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getOpenDatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getOpenDatesSH_InputMessage">
+    <wsdl:part name="parameters" element="tns:getOpenDatesSH" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getOpenDatesSH_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getOpenDatesSHResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getServRadRepTid_InputMessage">
+    <wsdl:part name="parameters" element="tns:getServRadRepTid" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getServRadRepTid_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getServRadRepTidResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getServRadRepTidForServiceRad_InputMessage">
+    <wsdl:part name="parameters" element="tns:getServRadRepTidForServiceRad" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getServRadRepTidForServiceRad_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getServRadRepTidForServiceRadResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getServRadRepTidForSR_InputMessage">
+    <wsdl:part name="parameters" element="tns:getServRadRepTidForSR" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getServRadRepTidForSR_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getServRadRepTidForSRResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_saveServRadRepTid_InputMessage">
+    <wsdl:part name="parameters" element="tns:saveServRadRepTid" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_saveServRadRepTid_OutputMessage">
+    <wsdl:part name="parameters" element="tns:saveServRadRepTidResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_isOpen_InputMessage">
+    <wsdl:part name="parameters" element="tns:isOpen" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_isOpen_OutputMessage">
+    <wsdl:part name="parameters" element="tns:isOpenResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getReparatorsForServiceHuvud_InputMessage">
+    <wsdl:part name="parameters" element="tns:getReparatorsForServiceHuvud" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getReparatorsForServiceHuvud_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getReparatorsForServiceHuvudResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getAlternateKey_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAlternateKey" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getAlternateKey_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAlternateKeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_uploadPict_InputMessage">
+    <wsdl:part name="parameters" element="tns:uploadPict" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_uploadPict_OutputMessage">
+    <wsdl:part name="parameters" element="tns:uploadPictResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_savePicture_InputMessage">
+    <wsdl:part name="parameters" element="tns:savePicture" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_savePicture_OutputMessage">
+    <wsdl:part name="parameters" element="tns:savePictureResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getPicture_InputMessage">
+    <wsdl:part name="parameters" element="tns:getPicture" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getPicture_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getPictureResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_downLoadPict_InputMessage">
+    <wsdl:part name="parameters" element="tns:downLoadPict" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_downLoadPict_OutputMessage">
+    <wsdl:part name="parameters" element="tns:downLoadPictResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_deletePicture_InputMessage">
+    <wsdl:part name="parameters" element="tns:deletePicture" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_deletePicture_OutputMessage">
+    <wsdl:part name="parameters" element="tns:deletePictureResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getPicturesForServiceRad_InputMessage">
+    <wsdl:part name="parameters" element="tns:getPicturesForServiceRad" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getPicturesForServiceRad_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getPicturesForServiceRadResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getAllSttText_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAllSttText" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getAllSttText_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAllSttTextResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getPictCategories_InputMessage">
+    <wsdl:part name="parameters" element="tns:getPictCategories" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getPictCategories_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getPictCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_updatePictMetadata_InputMessage">
+    <wsdl:part name="parameters" element="tns:updatePictMetadata" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_updatePictMetadata_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updatePictMetadataResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getVersion_InputMessage">
+    <wsdl:part name="parameters" element="tns:getVersion" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getVersion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getVersionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_SumHoursForServRad_InputMessage">
+    <wsdl:part name="parameters" element="tns:SumHoursForServRad" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_SumHoursForServRad_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SumHoursForServRadResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_deleteReservdel_InputMessage">
+    <wsdl:part name="parameters" element="tns:deleteReservdel" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_deleteReservdel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:deleteReservdelResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getAllTimeForOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAllTimeForOrder" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getAllTimeForOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAllTimeForOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getTimeTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:getTimeTypes" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getTimeTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getTimeTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getTimeTypesForOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:getTimeTypesForOrder" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getTimeTypesForOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getTimeTypesForOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getTimeRegVersion_InputMessage">
+    <wsdl:part name="parameters" element="tns:getTimeRegVersion" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getTimeRegVersion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getTimeRegVersionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getSalart_InputMessage">
+    <wsdl:part name="parameters" element="tns:getSalart" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getSalart_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getSalartResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getRepKat_InputMessage">
+    <wsdl:part name="parameters" element="tns:getRepKat" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getRepKat_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getRepKatResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_saveServHuvRepTid_InputMessage">
+    <wsdl:part name="parameters" element="tns:saveServHuvRepTid" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_saveServHuvRepTid_OutputMessage">
+    <wsdl:part name="parameters" element="tns:saveServHuvRepTidResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getServHuvRepTid_InputMessage">
+    <wsdl:part name="parameters" element="tns:getServHuvRepTid" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getServHuvRepTid_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getServHuvRepTidResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getServHuvRepTidForSH_InputMessage">
+    <wsdl:part name="parameters" element="tns:getServHuvRepTidForSH" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getServHuvRepTidForSH_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getServHuvRepTidForSHResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getServHuvRepTidForShAnv_InputMessage">
+    <wsdl:part name="parameters" element="tns:getServHuvRepTidForShAnv" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getServHuvRepTidForShAnv_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getServHuvRepTidForShAnvResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getDefaultRepKat_InputMessage">
+    <wsdl:part name="parameters" element="tns:getDefaultRepKat" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getDefaultRepKat_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getDefaultRepKatResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_generateTimeReg2Report_InputMessage">
+    <wsdl:part name="parameters" element="tns:generateTimeReg2Report" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_generateTimeReg2Report_OutputMessage">
+    <wsdl:part name="parameters" element="tns:generateTimeReg2ReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getTimeRep2ReportStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:getTimeRep2ReportStatus" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getTimeRep2ReportStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getTimeRep2ReportStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getTimeRep2Weeks_InputMessage">
+    <wsdl:part name="parameters" element="tns:getTimeRep2Weeks" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getTimeRep2Weeks_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getTimeRep2WeeksResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getTimeRecordContactList_InputMessage">
+    <wsdl:part name="parameters" element="tns:getTimeRecordContactList" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getTimeRecordContactList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getTimeRecordContactListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_gGetGasketLevels_InputMessage">
+    <wsdl:part name="parameters" element="tns:gGetGasketLevels" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_gGetGasketLevels_OutputMessage">
+    <wsdl:part name="parameters" element="tns:gGetGasketLevelsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_saveGasketLevel_InputMessage">
+    <wsdl:part name="parameters" element="tns:saveGasketLevel" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_saveGasketLevel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:saveGasketLevelResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_saveFabrikat_InputMessage">
+    <wsdl:part name="parameters" element="tns:saveFabrikat" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_saveFabrikat_OutputMessage">
+    <wsdl:part name="parameters" element="tns:saveFabrikatResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_saveDn_InputMessage">
+    <wsdl:part name="parameters" element="tns:saveDn" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_saveDn_OutputMessage">
+    <wsdl:part name="parameters" element="tns:saveDnResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_savePn_InputMessage">
+    <wsdl:part name="parameters" element="tns:savePn" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_savePn_OutputMessage">
+    <wsdl:part name="parameters" element="tns:savePnResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_uploadDrawing_InputMessage">
+    <wsdl:part name="parameters" element="tns:uploadDrawing" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_uploadDrawing_OutputMessage">
+    <wsdl:part name="parameters" element="tns:uploadDrawingResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_saveDrawing_InputMessage">
+    <wsdl:part name="parameters" element="tns:saveDrawing" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_saveDrawing_OutputMessage">
+    <wsdl:part name="parameters" element="tns:saveDrawingResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getDrawing_InputMessage">
+    <wsdl:part name="parameters" element="tns:getDrawing" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getDrawing_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getDrawingResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_downLoadDrawing_InputMessage">
+    <wsdl:part name="parameters" element="tns:downLoadDrawing" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_downLoadDrawing_OutputMessage">
+    <wsdl:part name="parameters" element="tns:downLoadDrawingResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_deleteDrawing_InputMessage">
+    <wsdl:part name="parameters" element="tns:deleteDrawing" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_deleteDrawing_OutputMessage">
+    <wsdl:part name="parameters" element="tns:deleteDrawingResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getDrawingsForVentil_InputMessage">
+    <wsdl:part name="parameters" element="tns:getDrawingsForVentil" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_getDrawingsForVentil_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getDrawingsForVentilResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_updateDrawingMetaData_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateDrawingMetaData" />
+  </wsdl:message>
+  <wsdl:message name="ISmServ_updateDrawingMetaData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateDrawingMetaDataResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ISmServ">
+    <wsdl:operation name="login">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmServ/login" message="tns:ISmServ_login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmServ/loginResponse" message="tns:ISmServ_login_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getReparator">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmServ/getReparator" message="tns:ISmServ_getReparator_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmServ/getReparatorResponse" message="tns:ISmServ_getReparator_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getReparators">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmServ/getReparators" message="tns:ISmServ_getReparators_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmServ/getReparatorsResponse" message="tns:ISmServ_getReparators_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="gGetReparators">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmServ/gGetReparators" message="tns:ISmServ_gGetReparators_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmServ/gGetReparatorsResponse" message="tns:ISmServ_gGetReparators_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getServHuvForUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmServ/getServHuvForUser" message="tns:ISmServ_getServHuvForUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmServ/getServHuvForUserResponse" message="tns:ISmServ_getServHuvForUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getServHuv">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmServ/getServHuv" message="tns:ISmServ_getServHuv_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmServ/getServHuvResponse" message="tns:ISmServ_getServHuv_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllServRad">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmServ/getAllServRad" message="tns:ISmServ_getAllServRad_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmServ/getAllServRadResponse" message="tns:ISmServ_getAllServRad_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getServRad">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmServ/getServRad" message="tns:ISmServ_getServRad_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmServ/getServRadResponse" message="tns:ISmServ_getServRad_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="saveServRad">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmServ/saveServRad" message="tns:ISmServ_saveServRad_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmServ/saveServRadResponse" message="tns:ISmServ_saveServRad_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getVentil">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmServ/getVentil" message="tns:ISmServ_getVentil_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmServ/getVentilResponse" message="tns:ISmServ_getVentil_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getVentilsForCust">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmServ/getVentilsForCust" message="tns:ISmServ_getVentilsForCust_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmServ/getVentilsForCustResponse" message="tns:ISmServ_getVentilsForCust_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="saveVentil">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmServ/saveVentil" message="tns:ISmServ_saveVentil_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmServ/saveVentilResponse" message="tns:ISmServ_saveVentil_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getVentilKategorier">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmServ/getVentilKategorier" message="tns:ISmServ_getVentilKategorier_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmServ/getVentilKategorierResponse" message="tns:ISmServ_getVentilKategorier_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getFabrikat">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmServ/getFabrikat" message="tns:ISmServ_getFabrikat_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmServ/getFabrikatResponse" message="tns:ISmServ_getFabrikat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getDn">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmServ/getDn" message="tns:ISmServ_getDn_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmServ/getDnResponse" message="tns:ISmServ_getDn_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getPn">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmServ/getPn" message="tns:ISmServ_getPn_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmServ/getPnResponse" message="tns:ISmServ_getPn_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getArtList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmServ/getArtList" message="tns:ISmServ_getArtList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmServ/getArtListResponse" message="tns:ISmServ_getArtList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getArtikel">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmServ/getArtikel" message="tns:ISmServ_getArtikel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmServ/getArtikelResponse" message="tns:ISmServ_getArtikel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getReservdelsForServiceRad">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmServ/getReservdelsForServiceRad" message="tns:ISmServ_getReservdelsForServiceRad_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmServ/getReservdelsForServiceRadResponse" message="tns:ISmServ_getReservdelsForServiceRad_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getReservdel">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmServ/getReservdel" message="tns:ISmServ_getReservdel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmServ/getReservdelResponse" message="tns:ISmServ_getReservdel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="saveReservdel">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmServ/saveReservdel" message="tns:ISmServ_saveReservdel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmServ/saveReservdelResponse" message="tns:ISmServ_saveReservdel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getOpenDates">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmServ/getOpenDates" message="tns:ISmServ_getOpenDates_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmServ/getOpenDatesResponse" message="tns:ISmServ_getOpenDates_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getOpenDatesSH">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmServ/getOpenDatesSH" message="tns:ISmServ_getOpenDatesSH_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmServ/getOpenDatesSHResponse" message="tns:ISmServ_getOpenDatesSH_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getServRadRepTid">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmServ/getServRadRepTid" message="tns:ISmServ_getServRadRepTid_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmServ/getServRadRepTidResponse" message="tns:ISmServ_getServRadRepTid_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getServRadRepTidForServiceRad">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmServ/getServRadRepTidForServiceRad" message="tns:ISmServ_getServRadRepTidForServiceRad_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmServ/getServRadRepTidForServiceRadResponse" message="tns:ISmServ_getServRadRepTidForServiceRad_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getServRadRepTidForSR">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmServ/getServRadRepTidForSR" message="tns:ISmServ_getServRadRepTidForSR_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmServ/getServRadRepTidForSRResponse" message="tns:ISmServ_getServRadRepTidForSR_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="saveServRadRepTid">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmServ/saveServRadRepTid" message="tns:ISmServ_saveServRadRepTid_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmServ/saveServRadRepTidResponse" message="tns:ISmServ_saveServRadRepTid_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="isOpen">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmServ/isOpen" message="tns:ISmServ_isOpen_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmServ/isOpenResponse" message="tns:ISmServ_isOpen_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getReparatorsForServiceHuvud">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmServ/getReparatorsForServiceHuvud" message="tns:ISmServ_getReparatorsForServiceHuvud_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmServ/getReparatorsForServiceHuvudResponse" message="tns:ISmServ_getReparatorsForServiceHuvud_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getAlternateKey">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmServ/getAlternateKey" message="tns:ISmServ_getAlternateKey_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmServ/getAlternateKeyResponse" message="tns:ISmServ_getAlternateKey_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="uploadPict">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmServ/uploadPict" message="tns:ISmServ_uploadPict_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmServ/uploadPictResponse" message="tns:ISmServ_uploadPict_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="savePicture">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmServ/savePicture" message="tns:ISmServ_savePicture_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmServ/savePictureResponse" message="tns:ISmServ_savePicture_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getPicture">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmServ/getPicture" message="tns:ISmServ_getPicture_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmServ/getPictureResponse" message="tns:ISmServ_getPicture_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="downLoadPict">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmServ/downLoadPict" message="tns:ISmServ_downLoadPict_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmServ/downLoadPictResponse" message="tns:ISmServ_downLoadPict_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="deletePicture">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmServ/deletePicture" message="tns:ISmServ_deletePicture_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmServ/deletePictureResponse" message="tns:ISmServ_deletePicture_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getPicturesForServiceRad">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmServ/getPicturesForServiceRad" message="tns:ISmServ_getPicturesForServiceRad_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmServ/getPicturesForServiceRadResponse" message="tns:ISmServ_getPicturesForServiceRad_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllSttText">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmServ/getAllSttText" message="tns:ISmServ_getAllSttText_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmServ/getAllSttTextResponse" message="tns:ISmServ_getAllSttText_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getPictCategories">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmServ/getPictCategories" message="tns:ISmServ_getPictCategories_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmServ/getPictCategoriesResponse" message="tns:ISmServ_getPictCategories_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updatePictMetadata">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmServ/updatePictMetadata" message="tns:ISmServ_updatePictMetadata_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmServ/updatePictMetadataResponse" message="tns:ISmServ_updatePictMetadata_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getVersion">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmServ/getVersion" message="tns:ISmServ_getVersion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmServ/getVersionResponse" message="tns:ISmServ_getVersion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SumHoursForServRad">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmServ/SumHoursForServRad" message="tns:ISmServ_SumHoursForServRad_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmServ/SumHoursForServRadResponse" message="tns:ISmServ_SumHoursForServRad_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteReservdel">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmServ/deleteReservdel" message="tns:ISmServ_deleteReservdel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmServ/deleteReservdelResponse" message="tns:ISmServ_deleteReservdel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllTimeForOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmServ/getAllTimeForOrder" message="tns:ISmServ_getAllTimeForOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmServ/getAllTimeForOrderResponse" message="tns:ISmServ_getAllTimeForOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getTimeTypes">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmServ/getTimeTypes" message="tns:ISmServ_getTimeTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmServ/getTimeTypesResponse" message="tns:ISmServ_getTimeTypes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getTimeTypesForOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmServ/getTimeTypesForOrder" message="tns:ISmServ_getTimeTypesForOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmServ/getTimeTypesForOrderResponse" message="tns:ISmServ_getTimeTypesForOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getTimeRegVersion">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmServ/getTimeRegVersion" message="tns:ISmServ_getTimeRegVersion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmServ/getTimeRegVersionResponse" message="tns:ISmServ_getTimeRegVersion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getSalart">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmServ/getSalart" message="tns:ISmServ_getSalart_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmServ/getSalartResponse" message="tns:ISmServ_getSalart_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getRepKat">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmServ/getRepKat" message="tns:ISmServ_getRepKat_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmServ/getRepKatResponse" message="tns:ISmServ_getRepKat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="saveServHuvRepTid">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmServ/saveServHuvRepTid" message="tns:ISmServ_saveServHuvRepTid_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmServ/saveServHuvRepTidResponse" message="tns:ISmServ_saveServHuvRepTid_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getServHuvRepTid">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmServ/getServHuvRepTid" message="tns:ISmServ_getServHuvRepTid_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmServ/getServHuvRepTidResponse" message="tns:ISmServ_getServHuvRepTid_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getServHuvRepTidForSH">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmServ/getServHuvRepTidForSH" message="tns:ISmServ_getServHuvRepTidForSH_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmServ/getServHuvRepTidForSHResponse" message="tns:ISmServ_getServHuvRepTidForSH_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getServHuvRepTidForShAnv">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmServ/getServHuvRepTidForShAnv" message="tns:ISmServ_getServHuvRepTidForShAnv_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmServ/getServHuvRepTidForShAnvResponse" message="tns:ISmServ_getServHuvRepTidForShAnv_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getDefaultRepKat">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmServ/getDefaultRepKat" message="tns:ISmServ_getDefaultRepKat_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmServ/getDefaultRepKatResponse" message="tns:ISmServ_getDefaultRepKat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="generateTimeReg2Report">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmServ/generateTimeReg2Report" message="tns:ISmServ_generateTimeReg2Report_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmServ/generateTimeReg2ReportResponse" message="tns:ISmServ_generateTimeReg2Report_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getTimeRep2ReportStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmServ/getTimeRep2ReportStatus" message="tns:ISmServ_getTimeRep2ReportStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmServ/getTimeRep2ReportStatusResponse" message="tns:ISmServ_getTimeRep2ReportStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getTimeRep2Weeks">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmServ/getTimeRep2Weeks" message="tns:ISmServ_getTimeRep2Weeks_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmServ/getTimeRep2WeeksResponse" message="tns:ISmServ_getTimeRep2Weeks_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getTimeRecordContactList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmServ/getTimeRecordContactList" message="tns:ISmServ_getTimeRecordContactList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmServ/getTimeRecordContactListResponse" message="tns:ISmServ_getTimeRecordContactList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="gGetGasketLevels">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmServ/gGetGasketLevels" message="tns:ISmServ_gGetGasketLevels_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmServ/gGetGasketLevelsResponse" message="tns:ISmServ_gGetGasketLevels_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="saveGasketLevel">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmServ/saveGasketLevel" message="tns:ISmServ_saveGasketLevel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmServ/saveGasketLevelResponse" message="tns:ISmServ_saveGasketLevel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="saveFabrikat">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmServ/saveFabrikat" message="tns:ISmServ_saveFabrikat_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmServ/saveFabrikatResponse" message="tns:ISmServ_saveFabrikat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="saveDn">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmServ/saveDn" message="tns:ISmServ_saveDn_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmServ/saveDnResponse" message="tns:ISmServ_saveDn_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="savePn">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmServ/savePn" message="tns:ISmServ_savePn_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmServ/savePnResponse" message="tns:ISmServ_savePn_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="uploadDrawing">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmServ/uploadDrawing" message="tns:ISmServ_uploadDrawing_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmServ/uploadDrawingResponse" message="tns:ISmServ_uploadDrawing_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="saveDrawing">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmServ/saveDrawing" message="tns:ISmServ_saveDrawing_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmServ/saveDrawingResponse" message="tns:ISmServ_saveDrawing_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getDrawing">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmServ/getDrawing" message="tns:ISmServ_getDrawing_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmServ/getDrawingResponse" message="tns:ISmServ_getDrawing_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="downLoadDrawing">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmServ/downLoadDrawing" message="tns:ISmServ_downLoadDrawing_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmServ/downLoadDrawingResponse" message="tns:ISmServ_downLoadDrawing_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteDrawing">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmServ/deleteDrawing" message="tns:ISmServ_deleteDrawing_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmServ/deleteDrawingResponse" message="tns:ISmServ_deleteDrawing_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getDrawingsForVentil">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmServ/getDrawingsForVentil" message="tns:ISmServ_getDrawingsForVentil_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmServ/getDrawingsForVentilResponse" message="tns:ISmServ_getDrawingsForVentil_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateDrawingMetaData">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmServ/updateDrawingMetaData" message="tns:ISmServ_updateDrawingMetaData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmServ/updateDrawingMetaDataResponse" message="tns:ISmServ_updateDrawingMetaData_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ISmServ" type="tns:ISmServ">
+    <wsp:PolicyReference URI="#BasicHttpBinding_ISmServ_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="login">
+      <soap:operation soapAction="http://tempuri.org/ISmServ/login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getReparator">
+      <soap:operation soapAction="http://tempuri.org/ISmServ/getReparator" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getReparators">
+      <soap:operation soapAction="http://tempuri.org/ISmServ/getReparators" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="gGetReparators">
+      <soap:operation soapAction="http://tempuri.org/ISmServ/gGetReparators" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getServHuvForUser">
+      <soap:operation soapAction="http://tempuri.org/ISmServ/getServHuvForUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getServHuv">
+      <soap:operation soapAction="http://tempuri.org/ISmServ/getServHuv" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllServRad">
+      <soap:operation soapAction="http://tempuri.org/ISmServ/getAllServRad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getServRad">
+      <soap:operation soapAction="http://tempuri.org/ISmServ/getServRad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="saveServRad">
+      <soap:operation soapAction="http://tempuri.org/ISmServ/saveServRad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getVentil">
+      <soap:operation soapAction="http://tempuri.org/ISmServ/getVentil" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getVentilsForCust">
+      <soap:operation soapAction="http://tempuri.org/ISmServ/getVentilsForCust" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="saveVentil">
+      <soap:operation soapAction="http://tempuri.org/ISmServ/saveVentil" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getVentilKategorier">
+      <soap:operation soapAction="http://tempuri.org/ISmServ/getVentilKategorier" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getFabrikat">
+      <soap:operation soapAction="http://tempuri.org/ISmServ/getFabrikat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDn">
+      <soap:operation soapAction="http://tempuri.org/ISmServ/getDn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPn">
+      <soap:operation soapAction="http://tempuri.org/ISmServ/getPn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getArtList">
+      <soap:operation soapAction="http://tempuri.org/ISmServ/getArtList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getArtikel">
+      <soap:operation soapAction="http://tempuri.org/ISmServ/getArtikel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getReservdelsForServiceRad">
+      <soap:operation soapAction="http://tempuri.org/ISmServ/getReservdelsForServiceRad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getReservdel">
+      <soap:operation soapAction="http://tempuri.org/ISmServ/getReservdel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="saveReservdel">
+      <soap:operation soapAction="http://tempuri.org/ISmServ/saveReservdel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getOpenDates">
+      <soap:operation soapAction="http://tempuri.org/ISmServ/getOpenDates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getOpenDatesSH">
+      <soap:operation soapAction="http://tempuri.org/ISmServ/getOpenDatesSH" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getServRadRepTid">
+      <soap:operation soapAction="http://tempuri.org/ISmServ/getServRadRepTid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getServRadRepTidForServiceRad">
+      <soap:operation soapAction="http://tempuri.org/ISmServ/getServRadRepTidForServiceRad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getServRadRepTidForSR">
+      <soap:operation soapAction="http://tempuri.org/ISmServ/getServRadRepTidForSR" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="saveServRadRepTid">
+      <soap:operation soapAction="http://tempuri.org/ISmServ/saveServRadRepTid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isOpen">
+      <soap:operation soapAction="http://tempuri.org/ISmServ/isOpen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getReparatorsForServiceHuvud">
+      <soap:operation soapAction="http://tempuri.org/ISmServ/getReparatorsForServiceHuvud" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAlternateKey">
+      <soap:operation soapAction="http://tempuri.org/ISmServ/getAlternateKey" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="uploadPict">
+      <soap:operation soapAction="http://tempuri.org/ISmServ/uploadPict" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="savePicture">
+      <soap:operation soapAction="http://tempuri.org/ISmServ/savePicture" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPicture">
+      <soap:operation soapAction="http://tempuri.org/ISmServ/getPicture" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="downLoadPict">
+      <soap:operation soapAction="http://tempuri.org/ISmServ/downLoadPict" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deletePicture">
+      <soap:operation soapAction="http://tempuri.org/ISmServ/deletePicture" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPicturesForServiceRad">
+      <soap:operation soapAction="http://tempuri.org/ISmServ/getPicturesForServiceRad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllSttText">
+      <soap:operation soapAction="http://tempuri.org/ISmServ/getAllSttText" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPictCategories">
+      <soap:operation soapAction="http://tempuri.org/ISmServ/getPictCategories" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updatePictMetadata">
+      <soap:operation soapAction="http://tempuri.org/ISmServ/updatePictMetadata" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getVersion">
+      <soap:operation soapAction="http://tempuri.org/ISmServ/getVersion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SumHoursForServRad">
+      <soap:operation soapAction="http://tempuri.org/ISmServ/SumHoursForServRad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteReservdel">
+      <soap:operation soapAction="http://tempuri.org/ISmServ/deleteReservdel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllTimeForOrder">
+      <soap:operation soapAction="http://tempuri.org/ISmServ/getAllTimeForOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTimeTypes">
+      <soap:operation soapAction="http://tempuri.org/ISmServ/getTimeTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTimeTypesForOrder">
+      <soap:operation soapAction="http://tempuri.org/ISmServ/getTimeTypesForOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTimeRegVersion">
+      <soap:operation soapAction="http://tempuri.org/ISmServ/getTimeRegVersion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSalart">
+      <soap:operation soapAction="http://tempuri.org/ISmServ/getSalart" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRepKat">
+      <soap:operation soapAction="http://tempuri.org/ISmServ/getRepKat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="saveServHuvRepTid">
+      <soap:operation soapAction="http://tempuri.org/ISmServ/saveServHuvRepTid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getServHuvRepTid">
+      <soap:operation soapAction="http://tempuri.org/ISmServ/getServHuvRepTid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getServHuvRepTidForSH">
+      <soap:operation soapAction="http://tempuri.org/ISmServ/getServHuvRepTidForSH" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getServHuvRepTidForShAnv">
+      <soap:operation soapAction="http://tempuri.org/ISmServ/getServHuvRepTidForShAnv" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDefaultRepKat">
+      <soap:operation soapAction="http://tempuri.org/ISmServ/getDefaultRepKat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="generateTimeReg2Report">
+      <soap:operation soapAction="http://tempuri.org/ISmServ/generateTimeReg2Report" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTimeRep2ReportStatus">
+      <soap:operation soapAction="http://tempuri.org/ISmServ/getTimeRep2ReportStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTimeRep2Weeks">
+      <soap:operation soapAction="http://tempuri.org/ISmServ/getTimeRep2Weeks" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTimeRecordContactList">
+      <soap:operation soapAction="http://tempuri.org/ISmServ/getTimeRecordContactList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="gGetGasketLevels">
+      <soap:operation soapAction="http://tempuri.org/ISmServ/gGetGasketLevels" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="saveGasketLevel">
+      <soap:operation soapAction="http://tempuri.org/ISmServ/saveGasketLevel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="saveFabrikat">
+      <soap:operation soapAction="http://tempuri.org/ISmServ/saveFabrikat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="saveDn">
+      <soap:operation soapAction="http://tempuri.org/ISmServ/saveDn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="savePn">
+      <soap:operation soapAction="http://tempuri.org/ISmServ/savePn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="uploadDrawing">
+      <soap:operation soapAction="http://tempuri.org/ISmServ/uploadDrawing" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="saveDrawing">
+      <soap:operation soapAction="http://tempuri.org/ISmServ/saveDrawing" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDrawing">
+      <soap:operation soapAction="http://tempuri.org/ISmServ/getDrawing" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="downLoadDrawing">
+      <soap:operation soapAction="http://tempuri.org/ISmServ/downLoadDrawing" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteDrawing">
+      <soap:operation soapAction="http://tempuri.org/ISmServ/deleteDrawing" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDrawingsForVentil">
+      <soap:operation soapAction="http://tempuri.org/ISmServ/getDrawingsForVentil" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateDrawingMetaData">
+      <soap:operation soapAction="http://tempuri.org/ISmServ/updateDrawingMetaData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SmServ">
+    <wsdl:port name="BasicHttpBinding_ISmServ" binding="tns:BasicHttpBinding_ISmServ">
+      <soap:address location="http://localhost:49962/SmServ.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

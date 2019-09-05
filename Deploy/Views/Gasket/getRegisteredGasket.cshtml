@@ -1,0 +1,77 @@
+﻿@{
+    Layout = null;
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            <table class="table table-sm table-striped" id="myDataTable">
+                <thead>
+                    <tr style="font-size:small; font-weight:bold">
+                        <th>Material</th>
+                        <th>Packningstyp</th>
+                        <th>Beskrivning</th>
+                        <th>Ytterdiameter</th>
+                        <th>Innerdiameter</th>
+                        <th>Pris</th>
+                        <th>Ändra</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in ViewBag.gasketList)
+                    {
+                        <tr style="font-size:small">
+                            <td>
+                                @item.materialName @item.materialSizeName @item.materialThicknName
+                            </td>
+                            <td>@item.gasketTypeName</td>
+                            <td>@item.description</td>
+                            <td>@item.outerDiam mm</td>
+                            <td>@item.innerDiam mm</td>
+                            <td>@item.price</td>
+                            <td>
+                                <a href="#" onclick="selectGasket(@item.gasketId)"><i class="glyphicon glyphicon-pencil"></i></a>
+                                <a href="#" onclick="deleteGasket(@item.gasketId)"><i class="glyphicon glyphicon-remove" style="margin-left : 10px;"></i></a>
+                                <div class="col-md-12" id="ErrorTextDelete" style="color:red">
+                                    <span>@ViewBag.errorTxt</span>
+                                </div>
+
+                            </td>
+
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script>
+    var oTable;
+    $(function () {
+        oTable = $("#myDataTable").DataTable({
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/1.10.16/i18n/Swedish.json"
+            }
+        });
+    });
+
+
+    var deleteGasket = function (gasketId) {
+        $("#ErrorTextDelete").html("");
+        var data = "gasketId=" + gasketId;
+        $.post("/Gasket/deleteGasket", data, function (response) {
+            if (response.message != "")
+                $("#ErrorTextDelete").html("<span>" + response.message + "</span>");
+            else if (response.errMessage != "")
+                $("#ErrorTextDelete").html("<span>" + response.errMessage + "</span>");
+            else
+                getRegisteredGasket();
+        }, "json");
+    }
+
+
+
+</script>
+
+

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="6598493a-b597-49b2-a520-2cb5ac068e8c" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:49962/SmServ.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="SmServ.xsd" MetadataType="Schema" ID="cf616cb4-1f25-4e3c-ad28-e51f9f55cf1c" SourceId="1" SourceUrl="http://localhost:49962/SmServ.svc?xsd=xsd0" />
+    <MetadataFile FileName="SmServ1.xsd" MetadataType="Schema" ID="59b981f1-d92e-4765-8174-b430b5aefa59" SourceId="1" SourceUrl="http://localhost:49962/SmServ.svc?xsd=xsd1" />
+    <MetadataFile FileName="SmServ2.xsd" MetadataType="Schema" ID="83a016fe-c74f-4915-9017-868af7600ac6" SourceId="1" SourceUrl="http://localhost:49962/SmServ.svc?xsd=xsd2" />
+    <MetadataFile FileName="SmServ3.xsd" MetadataType="Schema" ID="93226275-1541-430f-b140-1f4c89c1fa30" SourceId="1" SourceUrl="http://localhost:49962/SmServ.svc?xsd=xsd3" />
+    <MetadataFile FileName="SmServ4.xsd" MetadataType="Schema" ID="a1bc17c8-a8d3-4bb7-b567-3109f8abd436" SourceId="1" SourceUrl="http://localhost:49962/SmServ.svc?xsd=xsd4" />
+    <MetadataFile FileName="SmServ5.xsd" MetadataType="Schema" ID="3736181c-b8de-4b8d-9954-f911e24216c4" SourceId="1" SourceUrl="http://localhost:49962/SmServ.svc?xsd=xsd5" />
+    <MetadataFile FileName="SmServ.disco" MetadataType="Disco" ID="9adcc9d9-e7bb-44f2-99c3-ed3f9e864a45" SourceId="1" SourceUrl="http://localhost:49962/SmServ.svc?disco" />
+    <MetadataFile FileName="SmServ.wsdl" MetadataType="Wsdl" ID="27724aad-4e1e-4159-b1a0-3116652ded80" SourceId="1" SourceUrl="http://localhost:49962/SmServ.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

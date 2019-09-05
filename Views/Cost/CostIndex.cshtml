@@ -1,0 +1,113 @@
+﻿@model GaskMan.Models.CCost
+@{
+    ViewBag.Title = "CostIndex";
+}
+
+<style>
+    .Error {
+        color: red;
+    }
+
+    .Label {
+        margin-top: 8px;
+        font-weight: normal;
+    }
+</style>
+
+
+<div class="row" style="margin-top:20px;">
+    <form id="myForm">
+        <div class="row">
+            <div class="well col-sm-10 col-md-10 col-lg-10">
+                <h4 style="color:darkseagreen">Timdebitering</h4>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                @Html.HiddenFor(m => m.workingCostId)
+                <div class="col-sm-4 col-md-4 col-lg-4">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.cuttingHourNet, new { @class = "Label" })
+                        @Html.TextBoxFor(m => m.cuttingHourNet, new { @class = "form-control", @placeholder = "Timdebitering netto", @maxlength = "20" })
+                        @Html.ValidationMessageFor(m => m.cuttingHourNet, "", new { @class = "Error" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.cuttingHourSales, new { @class = "Label" })
+                        @Html.TextBoxFor(m => m.cuttingHourSales, new { @class = "form-control", @placeholder = "Timdebitering brutto", @maxlength = "20" })
+                        @Html.ValidationMessageFor(m => m.cuttingHourSales, "", new { @class = "Error" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.cuttingMargin, new { @class = "Label" })
+                        @Html.TextBoxFor(m => m.cuttingMargin, new { @class = "form-control", @placeholder = "Klippmarginal", @maxlength = "20" })
+                        @Html.ValidationMessageFor(m => m.cuttingMargin, "", new { @class = "Error" })
+                    </div>
+                </div>
+                <div class="col-sm-4 col-md-4 col-lg-4">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.handlingHourNet, new { @class = "Label" })
+                        @Html.TextBoxFor(m => m.handlingHourNet, new { @class = "form-control", @placeholder = "Timdebitering netto", @maxlength = "20" })
+                        @Html.ValidationMessageFor(m => m.handlingHourNet, "", new { @class = "Error" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.handlingHourSales, new { @class = "Label" })
+                        @Html.TextBoxFor(m => m.handlingHourSales, new { @class = "form-control", @placeholder = "Timdebitering brutto", @maxlength = "20" })
+                        @Html.ValidationMessageFor(m => m.cuttingHourSales, "", new { @class = "Error" })
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="row" style="margin-top:20px;">
+            <div class="well col-sm-10">
+                <span>
+                    <a href="#" class="btn btn-success" onclick="saveCost()">&nbsp;Spara&nbsp;</a>
+                    <a href="#" class="btn btn-default" onclick="closeCost()">&nbsp;Stäng&nbsp;</a>
+                </span>
+                <div class="col-md-12" id="ErrorTextOrder" style="color:red">
+                    <span>@ViewBag.errorTxt</span>
+                </div>
+            </div>
+        </div>
+
+
+
+    </form>
+</div>
+
+
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-waitingfor/1.2.7/bootstrap-waitingfor.min.js"></script>
+<script>
+
+    var saveCost = function () {
+        $("#ErrorTextOrder").html("");
+        if (!$("#myForm").valid())
+            return;
+        waitingDialog.show('Sparar kostnader....');
+        var myformdata = $("#myForm").serialize();
+        $.post("/Cost/saveCost", myformdata, function (response) {
+            if (response.message != "IdentErr") {
+                if (response.message != "")
+                    $("#ErrorTextOrder").html("<span>" + response.message + "</span>");
+                else if (response.errMessage != "")
+                    $("#ErrorTextOrder").html("<span>" + response.errMessage + " (Felkod : " + response.errCode + ")</span>");
+                else {
+                    $("#workingCostId").val(response.workingCostId);
+                }
+            }
+            else
+                window.location.href = '/Home/Login';        
+            waitingDialog.hide();
+
+    }, "json");
+    }
+
+    var closeCost = function () {
+        window.location.href = '/Home/Index';
+    }
+</script>
+
+

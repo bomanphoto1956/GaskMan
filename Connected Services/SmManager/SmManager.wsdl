@@ -1,0 +1,971 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="SmManager" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:49962/SmManager.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:49962/SmManager.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:49962/SmManager.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SManApi" />
+      <xsd:import schemaLocation="http://localhost:49962/SmManager.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.Collections.Generic" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ISmManager_DoWork_InputMessage">
+    <wsdl:part name="parameters" element="tns:DoWork" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_DoWork_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DoWorkResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_loginAdmin_InputMessage">
+    <wsdl:part name="parameters" element="tns:loginAdmin" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_loginAdmin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:loginAdminResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_getServHuv_InputMessage">
+    <wsdl:part name="parameters" element="tns:getServHuv" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_getServHuv_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getServHuvResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_getServiceHuvud_InputMessage">
+    <wsdl:part name="parameters" element="tns:getServiceHuvud" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_getServiceHuvud_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getServiceHuvudResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_getReparatorList_InputMessage">
+    <wsdl:part name="parameters" element="tns:getReparatorList" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_getReparatorList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getReparatorListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_getCustList_InputMessage">
+    <wsdl:part name="parameters" element="tns:getCustList" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_getCustList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getCustListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_saveServHuv_InputMessage">
+    <wsdl:part name="parameters" element="tns:saveServHuv" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_saveServHuv_OutputMessage">
+    <wsdl:part name="parameters" element="tns:saveServHuvResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_toggleApprove_InputMessage">
+    <wsdl:part name="parameters" element="tns:toggleApprove" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_toggleApprove_OutputMessage">
+    <wsdl:part name="parameters" element="tns:toggleApproveResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_getShReparatorList_InputMessage">
+    <wsdl:part name="parameters" element="tns:getShReparatorList" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_getShReparatorList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getShReparatorListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_updateShrep_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateShrep" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_updateShrep_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateShrepResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_countReparator_InputMessage">
+    <wsdl:part name="parameters" element="tns:countReparator" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_countReparator_OutputMessage">
+    <wsdl:part name="parameters" element="tns:countReparatorResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_updateAllRep_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateAllRep" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_updateAllRep_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateAllRepResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_getOrderArt_InputMessage">
+    <wsdl:part name="parameters" element="tns:getOrderArt" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_getOrderArt_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getOrderArtResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_checkoutOrderArt_InputMessage">
+    <wsdl:part name="parameters" element="tns:checkoutOrderArt" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_checkoutOrderArt_OutputMessage">
+    <wsdl:part name="parameters" element="tns:checkoutOrderArtResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_getCheckoutableArticles_InputMessage">
+    <wsdl:part name="parameters" element="tns:getCheckoutableArticles" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_getCheckoutableArticles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getCheckoutableArticlesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_genCompStoreData_InputMessage">
+    <wsdl:part name="parameters" element="tns:genCompStoreData" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_genCompStoreData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:genCompStoreDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_countArtForStorageAut_InputMessage">
+    <wsdl:part name="parameters" element="tns:countArtForStorageAut" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_countArtForStorageAut_OutputMessage">
+    <wsdl:part name="parameters" element="tns:countArtForStorageAutResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_getNextOrderNumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:getNextOrderNumber" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_getNextOrderNumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getNextOrderNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_getMomskoder_InputMessage">
+    <wsdl:part name="parameters" element="tns:getMomskoder" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_getMomskoder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getMomskoderResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_countOrderArtRows_InputMessage">
+    <wsdl:part name="parameters" element="tns:countOrderArtRows" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_countOrderArtRows_OutputMessage">
+    <wsdl:part name="parameters" element="tns:countOrderArtRowsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_calculateCiOrderArt_InputMessage">
+    <wsdl:part name="parameters" element="tns:calculateCiOrderArt" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_calculateCiOrderArt_OutputMessage">
+    <wsdl:part name="parameters" element="tns:calculateCiOrderArtResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_setTempCiAntal_InputMessage">
+    <wsdl:part name="parameters" element="tns:setTempCiAntal" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_setTempCiAntal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:setTempCiAntalResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_commitTempCiAntal_InputMessage">
+    <wsdl:part name="parameters" element="tns:commitTempCiAntal" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_commitTempCiAntal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:commitTempCiAntalResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_exportTime_InputMessage">
+    <wsdl:part name="parameters" element="tns:exportTime" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_exportTime_OutputMessage">
+    <wsdl:part name="parameters" element="tns:exportTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_getCheckoutableArticle_InputMessage">
+    <wsdl:part name="parameters" element="tns:getCheckoutableArticle" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_getCheckoutableArticle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getCheckoutableArticleResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_getUcArtListSelection_InputMessage">
+    <wsdl:part name="parameters" element="tns:getUcArtListSelection" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_getUcArtListSelection_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getUcArtListSelectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_getOutcheckedList_InputMessage">
+    <wsdl:part name="parameters" element="tns:getOutcheckedList" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_getOutcheckedList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getOutcheckedListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_getExportListSelection_InputMessage">
+    <wsdl:part name="parameters" element="tns:getExportListSelection" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_getExportListSelection_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getExportListSelectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_getExportFullList_InputMessage">
+    <wsdl:part name="parameters" element="tns:getExportFullList" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_getExportFullList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getExportFullListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_logMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:logMessage" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_logMessage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:logMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_GLogin_InputMessage">
+    <wsdl:part name="parameters" element="tns:GLogin" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_GLogin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_getAllMaterial_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAllMaterial" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_getAllMaterial_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAllMaterialResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_getMaterial_InputMessage">
+    <wsdl:part name="parameters" element="tns:getMaterial" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_getMaterial_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getMaterialResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_saveMaterial_InputMessage">
+    <wsdl:part name="parameters" element="tns:saveMaterial" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_saveMaterial_OutputMessage">
+    <wsdl:part name="parameters" element="tns:saveMaterialResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_getMaterialSize_InputMessage">
+    <wsdl:part name="parameters" element="tns:getMaterialSize" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_getMaterialSize_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getMaterialSizeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_saveMaterialSize_InputMessage">
+    <wsdl:part name="parameters" element="tns:saveMaterialSize" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_saveMaterialSize_OutputMessage">
+    <wsdl:part name="parameters" element="tns:saveMaterialSizeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_getMaterialThickn_InputMessage">
+    <wsdl:part name="parameters" element="tns:getMaterialThickn" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_getMaterialThickn_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getMaterialThicknResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_saveMaterialThickness_InputMessage">
+    <wsdl:part name="parameters" element="tns:saveMaterialThickness" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_saveMaterialThickness_OutputMessage">
+    <wsdl:part name="parameters" element="tns:saveMaterialThicknessResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_getWorkingCosts_InputMessage">
+    <wsdl:part name="parameters" element="tns:getWorkingCosts" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_getWorkingCosts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getWorkingCostsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_saveWorkingCost_InputMessage">
+    <wsdl:part name="parameters" element="tns:saveWorkingCost" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_saveWorkingCost_OutputMessage">
+    <wsdl:part name="parameters" element="tns:saveWorkingCostResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_getGasket_InputMessage">
+    <wsdl:part name="parameters" element="tns:getGasket" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_getGasket_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getGasketResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_saveGasket_InputMessage">
+    <wsdl:part name="parameters" element="tns:saveGasket" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_saveGasket_OutputMessage">
+    <wsdl:part name="parameters" element="tns:saveGasketResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_deleteGasket_InputMessage">
+    <wsdl:part name="parameters" element="tns:deleteGasket" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_deleteGasket_OutputMessage">
+    <wsdl:part name="parameters" element="tns:deleteGasketResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_getGasketType_InputMessage">
+    <wsdl:part name="parameters" element="tns:getGasketType" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_getGasketType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getGasketTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_getReuseMaterial_InputMessage">
+    <wsdl:part name="parameters" element="tns:getReuseMaterial" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_getReuseMaterial_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getReuseMaterialResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_saveReuseMaterial_InputMessage">
+    <wsdl:part name="parameters" element="tns:saveReuseMaterial" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_saveReuseMaterial_OutputMessage">
+    <wsdl:part name="parameters" element="tns:saveReuseMaterialResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_getReusablePercentage_InputMessage">
+    <wsdl:part name="parameters" element="tns:getReusablePercentage" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_getReusablePercentage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getReusablePercentageResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_resetExport_InputMessage">
+    <wsdl:part name="parameters" element="tns:resetExport" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_resetExport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:resetExportResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_resendxOrderArt_InputMessage">
+    <wsdl:part name="parameters" element="tns:resendxOrderArt" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_resendxOrderArt_OutputMessage">
+    <wsdl:part name="parameters" element="tns:resendxOrderArtResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_getPyramidChange_InputMessage">
+    <wsdl:part name="parameters" element="tns:getPyramidChange" />
+  </wsdl:message>
+  <wsdl:message name="ISmManager_getPyramidChange_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getPyramidChangeResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ISmManager">
+    <wsdl:operation name="DoWork">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmManager/DoWork" message="tns:ISmManager_DoWork_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmManager/DoWorkResponse" message="tns:ISmManager_DoWork_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="loginAdmin">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmManager/loginAdmin" message="tns:ISmManager_loginAdmin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmManager/loginAdminResponse" message="tns:ISmManager_loginAdmin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getServHuv">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmManager/getServHuv" message="tns:ISmManager_getServHuv_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmManager/getServHuvResponse" message="tns:ISmManager_getServHuv_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getServiceHuvud">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmManager/getServiceHuvud" message="tns:ISmManager_getServiceHuvud_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmManager/getServiceHuvudResponse" message="tns:ISmManager_getServiceHuvud_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getReparatorList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmManager/getReparatorList" message="tns:ISmManager_getReparatorList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmManager/getReparatorListResponse" message="tns:ISmManager_getReparatorList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getCustList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmManager/getCustList" message="tns:ISmManager_getCustList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmManager/getCustListResponse" message="tns:ISmManager_getCustList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="saveServHuv">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmManager/saveServHuv" message="tns:ISmManager_saveServHuv_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmManager/saveServHuvResponse" message="tns:ISmManager_saveServHuv_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="toggleApprove">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmManager/toggleApprove" message="tns:ISmManager_toggleApprove_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmManager/toggleApproveResponse" message="tns:ISmManager_toggleApprove_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getShReparatorList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmManager/getShReparatorList" message="tns:ISmManager_getShReparatorList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmManager/getShReparatorListResponse" message="tns:ISmManager_getShReparatorList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateShrep">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmManager/updateShrep" message="tns:ISmManager_updateShrep_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmManager/updateShrepResponse" message="tns:ISmManager_updateShrep_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="countReparator">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmManager/countReparator" message="tns:ISmManager_countReparator_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmManager/countReparatorResponse" message="tns:ISmManager_countReparator_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateAllRep">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmManager/updateAllRep" message="tns:ISmManager_updateAllRep_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmManager/updateAllRepResponse" message="tns:ISmManager_updateAllRep_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getOrderArt">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmManager/getOrderArt" message="tns:ISmManager_getOrderArt_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmManager/getOrderArtResponse" message="tns:ISmManager_getOrderArt_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="checkoutOrderArt">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmManager/checkoutOrderArt" message="tns:ISmManager_checkoutOrderArt_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmManager/checkoutOrderArtResponse" message="tns:ISmManager_checkoutOrderArt_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getCheckoutableArticles">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmManager/getCheckoutableArticles" message="tns:ISmManager_getCheckoutableArticles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmManager/getCheckoutableArticlesResponse" message="tns:ISmManager_getCheckoutableArticles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="genCompStoreData">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmManager/genCompStoreData" message="tns:ISmManager_genCompStoreData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmManager/genCompStoreDataResponse" message="tns:ISmManager_genCompStoreData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="countArtForStorageAut">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmManager/countArtForStorageAut" message="tns:ISmManager_countArtForStorageAut_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmManager/countArtForStorageAutResponse" message="tns:ISmManager_countArtForStorageAut_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getNextOrderNumber">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmManager/getNextOrderNumber" message="tns:ISmManager_getNextOrderNumber_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmManager/getNextOrderNumberResponse" message="tns:ISmManager_getNextOrderNumber_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getMomskoder">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmManager/getMomskoder" message="tns:ISmManager_getMomskoder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmManager/getMomskoderResponse" message="tns:ISmManager_getMomskoder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="countOrderArtRows">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmManager/countOrderArtRows" message="tns:ISmManager_countOrderArtRows_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmManager/countOrderArtRowsResponse" message="tns:ISmManager_countOrderArtRows_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="calculateCiOrderArt">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmManager/calculateCiOrderArt" message="tns:ISmManager_calculateCiOrderArt_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmManager/calculateCiOrderArtResponse" message="tns:ISmManager_calculateCiOrderArt_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="setTempCiAntal">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmManager/setTempCiAntal" message="tns:ISmManager_setTempCiAntal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmManager/setTempCiAntalResponse" message="tns:ISmManager_setTempCiAntal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="commitTempCiAntal">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmManager/commitTempCiAntal" message="tns:ISmManager_commitTempCiAntal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmManager/commitTempCiAntalResponse" message="tns:ISmManager_commitTempCiAntal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="exportTime">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmManager/exportTime" message="tns:ISmManager_exportTime_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmManager/exportTimeResponse" message="tns:ISmManager_exportTime_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getCheckoutableArticle">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmManager/getCheckoutableArticle" message="tns:ISmManager_getCheckoutableArticle_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmManager/getCheckoutableArticleResponse" message="tns:ISmManager_getCheckoutableArticle_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getUcArtListSelection">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmManager/getUcArtListSelection" message="tns:ISmManager_getUcArtListSelection_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmManager/getUcArtListSelectionResponse" message="tns:ISmManager_getUcArtListSelection_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getOutcheckedList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmManager/getOutcheckedList" message="tns:ISmManager_getOutcheckedList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmManager/getOutcheckedListResponse" message="tns:ISmManager_getOutcheckedList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getExportListSelection">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmManager/getExportListSelection" message="tns:ISmManager_getExportListSelection_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmManager/getExportListSelectionResponse" message="tns:ISmManager_getExportListSelection_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getExportFullList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmManager/getExportFullList" message="tns:ISmManager_getExportFullList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmManager/getExportFullListResponse" message="tns:ISmManager_getExportFullList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="logMessage">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmManager/logMessage" message="tns:ISmManager_logMessage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmManager/logMessageResponse" message="tns:ISmManager_logMessage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GLogin">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmManager/GLogin" message="tns:ISmManager_GLogin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmManager/GLoginResponse" message="tns:ISmManager_GLogin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllMaterial">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmManager/getAllMaterial" message="tns:ISmManager_getAllMaterial_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmManager/getAllMaterialResponse" message="tns:ISmManager_getAllMaterial_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getMaterial">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmManager/getMaterial" message="tns:ISmManager_getMaterial_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmManager/getMaterialResponse" message="tns:ISmManager_getMaterial_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="saveMaterial">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmManager/saveMaterial" message="tns:ISmManager_saveMaterial_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmManager/saveMaterialResponse" message="tns:ISmManager_saveMaterial_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getMaterialSize">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmManager/getMaterialSize" message="tns:ISmManager_getMaterialSize_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmManager/getMaterialSizeResponse" message="tns:ISmManager_getMaterialSize_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="saveMaterialSize">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmManager/saveMaterialSize" message="tns:ISmManager_saveMaterialSize_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmManager/saveMaterialSizeResponse" message="tns:ISmManager_saveMaterialSize_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getMaterialThickn">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmManager/getMaterialThickn" message="tns:ISmManager_getMaterialThickn_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmManager/getMaterialThicknResponse" message="tns:ISmManager_getMaterialThickn_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="saveMaterialThickness">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmManager/saveMaterialThickness" message="tns:ISmManager_saveMaterialThickness_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmManager/saveMaterialThicknessResponse" message="tns:ISmManager_saveMaterialThickness_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getWorkingCosts">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmManager/getWorkingCosts" message="tns:ISmManager_getWorkingCosts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmManager/getWorkingCostsResponse" message="tns:ISmManager_getWorkingCosts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="saveWorkingCost">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmManager/saveWorkingCost" message="tns:ISmManager_saveWorkingCost_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmManager/saveWorkingCostResponse" message="tns:ISmManager_saveWorkingCost_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getGasket">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmManager/getGasket" message="tns:ISmManager_getGasket_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmManager/getGasketResponse" message="tns:ISmManager_getGasket_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="saveGasket">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmManager/saveGasket" message="tns:ISmManager_saveGasket_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmManager/saveGasketResponse" message="tns:ISmManager_saveGasket_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteGasket">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmManager/deleteGasket" message="tns:ISmManager_deleteGasket_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmManager/deleteGasketResponse" message="tns:ISmManager_deleteGasket_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getGasketType">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmManager/getGasketType" message="tns:ISmManager_getGasketType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmManager/getGasketTypeResponse" message="tns:ISmManager_getGasketType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getReuseMaterial">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmManager/getReuseMaterial" message="tns:ISmManager_getReuseMaterial_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmManager/getReuseMaterialResponse" message="tns:ISmManager_getReuseMaterial_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="saveReuseMaterial">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmManager/saveReuseMaterial" message="tns:ISmManager_saveReuseMaterial_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmManager/saveReuseMaterialResponse" message="tns:ISmManager_saveReuseMaterial_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getReusablePercentage">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmManager/getReusablePercentage" message="tns:ISmManager_getReusablePercentage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmManager/getReusablePercentageResponse" message="tns:ISmManager_getReusablePercentage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="resetExport">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmManager/resetExport" message="tns:ISmManager_resetExport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmManager/resetExportResponse" message="tns:ISmManager_resetExport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="resendxOrderArt">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmManager/resendxOrderArt" message="tns:ISmManager_resendxOrderArt_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmManager/resendxOrderArtResponse" message="tns:ISmManager_resendxOrderArt_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getPyramidChange">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmManager/getPyramidChange" message="tns:ISmManager_getPyramidChange_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmManager/getPyramidChangeResponse" message="tns:ISmManager_getPyramidChange_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ISmManager" type="tns:ISmManager">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="DoWork">
+      <soap:operation soapAction="http://tempuri.org/ISmManager/DoWork" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="loginAdmin">
+      <soap:operation soapAction="http://tempuri.org/ISmManager/loginAdmin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getServHuv">
+      <soap:operation soapAction="http://tempuri.org/ISmManager/getServHuv" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getServiceHuvud">
+      <soap:operation soapAction="http://tempuri.org/ISmManager/getServiceHuvud" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getReparatorList">
+      <soap:operation soapAction="http://tempuri.org/ISmManager/getReparatorList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCustList">
+      <soap:operation soapAction="http://tempuri.org/ISmManager/getCustList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="saveServHuv">
+      <soap:operation soapAction="http://tempuri.org/ISmManager/saveServHuv" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="toggleApprove">
+      <soap:operation soapAction="http://tempuri.org/ISmManager/toggleApprove" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getShReparatorList">
+      <soap:operation soapAction="http://tempuri.org/ISmManager/getShReparatorList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateShrep">
+      <soap:operation soapAction="http://tempuri.org/ISmManager/updateShrep" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="countReparator">
+      <soap:operation soapAction="http://tempuri.org/ISmManager/countReparator" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateAllRep">
+      <soap:operation soapAction="http://tempuri.org/ISmManager/updateAllRep" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getOrderArt">
+      <soap:operation soapAction="http://tempuri.org/ISmManager/getOrderArt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkoutOrderArt">
+      <soap:operation soapAction="http://tempuri.org/ISmManager/checkoutOrderArt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCheckoutableArticles">
+      <soap:operation soapAction="http://tempuri.org/ISmManager/getCheckoutableArticles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="genCompStoreData">
+      <soap:operation soapAction="http://tempuri.org/ISmManager/genCompStoreData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="countArtForStorageAut">
+      <soap:operation soapAction="http://tempuri.org/ISmManager/countArtForStorageAut" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getNextOrderNumber">
+      <soap:operation soapAction="http://tempuri.org/ISmManager/getNextOrderNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMomskoder">
+      <soap:operation soapAction="http://tempuri.org/ISmManager/getMomskoder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="countOrderArtRows">
+      <soap:operation soapAction="http://tempuri.org/ISmManager/countOrderArtRows" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="calculateCiOrderArt">
+      <soap:operation soapAction="http://tempuri.org/ISmManager/calculateCiOrderArt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setTempCiAntal">
+      <soap:operation soapAction="http://tempuri.org/ISmManager/setTempCiAntal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="commitTempCiAntal">
+      <soap:operation soapAction="http://tempuri.org/ISmManager/commitTempCiAntal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="exportTime">
+      <soap:operation soapAction="http://tempuri.org/ISmManager/exportTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCheckoutableArticle">
+      <soap:operation soapAction="http://tempuri.org/ISmManager/getCheckoutableArticle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUcArtListSelection">
+      <soap:operation soapAction="http://tempuri.org/ISmManager/getUcArtListSelection" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getOutcheckedList">
+      <soap:operation soapAction="http://tempuri.org/ISmManager/getOutcheckedList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getExportListSelection">
+      <soap:operation soapAction="http://tempuri.org/ISmManager/getExportListSelection" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getExportFullList">
+      <soap:operation soapAction="http://tempuri.org/ISmManager/getExportFullList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="logMessage">
+      <soap:operation soapAction="http://tempuri.org/ISmManager/logMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GLogin">
+      <soap:operation soapAction="http://tempuri.org/ISmManager/GLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllMaterial">
+      <soap:operation soapAction="http://tempuri.org/ISmManager/getAllMaterial" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMaterial">
+      <soap:operation soapAction="http://tempuri.org/ISmManager/getMaterial" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="saveMaterial">
+      <soap:operation soapAction="http://tempuri.org/ISmManager/saveMaterial" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMaterialSize">
+      <soap:operation soapAction="http://tempuri.org/ISmManager/getMaterialSize" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="saveMaterialSize">
+      <soap:operation soapAction="http://tempuri.org/ISmManager/saveMaterialSize" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMaterialThickn">
+      <soap:operation soapAction="http://tempuri.org/ISmManager/getMaterialThickn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="saveMaterialThickness">
+      <soap:operation soapAction="http://tempuri.org/ISmManager/saveMaterialThickness" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getWorkingCosts">
+      <soap:operation soapAction="http://tempuri.org/ISmManager/getWorkingCosts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="saveWorkingCost">
+      <soap:operation soapAction="http://tempuri.org/ISmManager/saveWorkingCost" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getGasket">
+      <soap:operation soapAction="http://tempuri.org/ISmManager/getGasket" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="saveGasket">
+      <soap:operation soapAction="http://tempuri.org/ISmManager/saveGasket" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteGasket">
+      <soap:operation soapAction="http://tempuri.org/ISmManager/deleteGasket" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getGasketType">
+      <soap:operation soapAction="http://tempuri.org/ISmManager/getGasketType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getReuseMaterial">
+      <soap:operation soapAction="http://tempuri.org/ISmManager/getReuseMaterial" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="saveReuseMaterial">
+      <soap:operation soapAction="http://tempuri.org/ISmManager/saveReuseMaterial" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getReusablePercentage">
+      <soap:operation soapAction="http://tempuri.org/ISmManager/getReusablePercentage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="resetExport">
+      <soap:operation soapAction="http://tempuri.org/ISmManager/resetExport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="resendxOrderArt">
+      <soap:operation soapAction="http://tempuri.org/ISmManager/resendxOrderArt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPyramidChange">
+      <soap:operation soapAction="http://tempuri.org/ISmManager/getPyramidChange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SmManager">
+    <wsdl:port name="BasicHttpBinding_ISmManager" binding="tns:BasicHttpBinding_ISmManager">
+      <soap:address location="http://localhost:49962/SmManager.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

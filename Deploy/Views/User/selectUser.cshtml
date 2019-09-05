@@ -1,0 +1,115 @@
+﻿@model GaskMan.Models.CUser
+
+@{
+    Layout = null;
+}
+
+<style>
+    .Error {
+        color: red;
+    }
+
+    .Label {
+        margin-top: 8px;
+        font-weight: normal;
+    }
+</style>
+
+
+<div class="row" style="margin-top:20px;">
+    <form id="myForm">
+        <div class="row">
+            <div class="well col-sm-12 col-md-12 col-lg-12">
+                <h4 style="color:darkseagreen">Användare</h4>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 col-md-8 col-lg-8 col-md-offset-2 col-sm-offset-2 col-lg-offset-2">
+                    @if (Model.AnvID == "")
+                    {
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.AnvID, new { @class = "Label" })
+                            @Html.DropDownListFor(m => m.AnvID, ViewBag.reparatorList as SelectList, "-- Välj användare --", new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.AnvID, "", new { @class = "Error" })
+                        </div>
+                    }
+                    else
+                    {
+                        @Html.HiddenFor(m => m.AnvID)
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Reparator, new { @class = "Label" })
+                            <br />
+                            <strong>@Html.DisplayFor(m => m.Reparator)</strong>
+                            <br />
+                        </div>
+                    }
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.gasketLevel, new { @class = "Label" })
+                        @Html.DropDownListFor(m => m.gasketLevel, ViewBag.access as SelectList, "-- Välj access --", new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.gasketLevel, "", new { @class = "Error" })
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="row" style="margin-top:20px;">
+                <div class="well col-sm-12">
+                    <span>
+                        <a href="#" class="btn btn-success" onclick="saveAccessLevel()">&nbsp;Spara&nbsp;</a>
+                        <a href="#" class="btn btn-default" onclick="toUserList()">&nbsp;Till Listan&nbsp;</a>
+                    </span>
+                    <div class="col-md-12" id="ErrorTextOrder" style="color:red">
+                        <span>@ViewBag.errorTxt</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-waitingfor/1.2.7/bootstrap-waitingfor.min.js"></script>
+<script>
+
+
+    var saveAccessLevel = function () {
+        $("#ErrorTextOrder").html("");
+        if (!$("#myForm").valid())
+            return;
+        waitingDialog.show('Sparar användare....');
+        var myformdata = $("#myForm").serialize();
+        $.post("/User/saveAccessLevel", myformdata, function (response) {
+            waitingDialog.hide();
+            if (response.message == "identError") {
+                window.location.href = "/Home/Login";
+                return;
+            }
+            if (response.message != "" || response.errMessage != "") {
+                if (response.message != "")
+                    $("#ErrorTextOrder").html("<span>" + response.message + "</span>");
+                else if (response.errMessage != "")
+                    $("#ErrorTextOrder").html("<span>" + response.errMessage + " (Felkod : " + response.errCode + ")</span>");                
+            }
+            else {                
+                selectUser(response.AnvID)
+            }
+        }, "json");
+    }
+
+    var toUserList = function () {
+        $("#gUserListDiv").show();
+        $("#gUserDetailDiv").empty();
+        $("#gUserDetailDiv").hide();
+        getRegisteredUsers();
+    }
+
+
+
+</script>
+
+
+

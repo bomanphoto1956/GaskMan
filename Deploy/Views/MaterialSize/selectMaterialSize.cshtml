@@ -1,0 +1,122 @@
+﻿@model GaskMan.Models.CMaterialSize
+
+@{
+    Layout = null;
+}
+
+<style>
+    .Error {
+        color: red;
+    }
+
+    .Label {
+        margin-top: 8px;
+        font-weight: normal;
+    }
+</style>
+
+
+    <div class="row" style="margin-top:20px;">
+        <form id="myForm">
+            <div class="row">
+                <div class="well col-sm-10 col-md-10 col-lg-10">
+                    <h4 style="color:darkseagreen">Registrera materialstorlek</h4>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-5 col-md-5 col-lg-5">
+                        @Html.HiddenFor(m => m.materialSizeId)
+
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.materialId, new { @class = "Label" })
+                            @Html.DropDownListFor(m => m.materialId, ViewBag.materialList as SelectList, "-- Välj material --", new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.materialId, "", new { @class = "Error" })
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.description, new { @class = "Label" })
+                            @Html.TextBoxFor(m => m.description, new { @class = "form-control", @placeholder = "Beskrivning", @maxlength = "50" })
+                            @Html.ValidationMessageFor(m => m.description, "", new { @class = "Error" })
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.sizeShort, new { @class = "Label" })
+                            @Html.TextBoxFor(m => m.sizeShort, new { @class = "form-control", @placeholder = "Kortnamn", @maxlength = "10" })
+                            @Html.ValidationMessageFor(m => m.sizeShort, "", new { @class = "Error" })
+                        </div>
+
+                    </div>
+                    <div class="col-sm-5 col-md-5 col-lg-5">
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.materialLength, new { @class = "Label" })
+                            @Html.TextBoxFor(m => m.materialLength, new { @class = "form-control", @placeholder = "Längd", @maxlength = "20" })
+                            @Html.ValidationMessageFor(m => m.materialLength, "", new { @class = "Error" })
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.materialWidth, new { @class = "Label" })
+                            @Html.TextBoxFor(m => m.materialWidth, new { @class = "form-control", @placeholder = "Bredd", @maxlength = "20" })
+                            @Html.ValidationMessageFor(m => m.materialWidth, "", new { @class = "Error" })
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.defaultVal, new { @class = "Label" })
+                            @Html.CheckBoxFor(m => m.defaultVal, new { @checked = "unchecked" })                                                       
+                        </div>
+
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="row" style="margin-top:20px;">
+                    <div class="well col-sm-10">
+                        <span>
+                            <a href="#" class="btn btn-success" onclick="saveMaterialSize()">&nbsp;Spara&nbsp;</a>
+                            <a href="#" class="btn btn-default" onclick="toMaterialList()">&nbsp;Till Listan&nbsp;</a>
+                        </span>
+                        <div class="col-md-12" id="ErrorTextOrder" style="color:red">                        
+                            <span>@ViewBag.errorTxt</span>
+                        </div>
+                    </div>
+                </div>
+
+
+
+        </form>
+    </div>
+
+
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-waitingfor/1.2.7/bootstrap-waitingfor.min.js"></script>
+<script>
+
+    var saveMaterialSize = function () {
+        $("#ErrorTextOrder").html("");
+        if (!$("#myForm").valid())
+            return;
+        waitingDialog.show('Sparar material....');
+        var myformdata = $("#myForm").serialize();
+        $.post("/MaterialSize/saveMaterialSize", myformdata, function (response) {
+            waitingDialog.hide();
+            if (response.message == "identError") {
+                window.location.href = "/Home/Login";
+                return;
+            }
+            if (response.message != "")
+                $("#ErrorTextOrder").html("<span>" + response.message + "</span>");
+            else if (response.errMessage != "")
+                $("#ErrorTextOrder").html("<span>" + response.errMessage + " (Felkod : " + response.errCode + ")</span>");
+            else {                
+                $("#materialSizeId").val(response.materialSizeId);
+            }            
+        }, "json");
+    }
+
+    var toMaterialList = function () {
+        $("#gMaterialSizeListDiv").show();
+        $("#gMaterialSizeDetailDiv").empty();
+        $("#gMaterialSizeDetailDiv").hide();
+        getRegisteredMaterialSize();
+    }
+</script>
+
+

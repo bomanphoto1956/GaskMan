@@ -1,0 +1,51 @@
+﻿<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            <table class="table table-sm table-striped" id="myDataTable">
+                <thead>
+                    <tr style="font-size:small; font-weight:bold">
+                        <th>Beskrivning</th>
+                        <th>Kortnamn</th>
+                        <th>Material</th>
+                        <th>Tjocklek</th>                        
+                        <th>Ändra</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in ViewBag.materialThicknList)
+                    {
+                        <tr style="font-size:small">
+                            <td>
+                                @item.description
+                            </td>
+                            <td>@item.thicknShort</td>
+                            <td>@item.materialName @item.materialSize</td>
+                            <td>@item.thickness</td>                            
+                            <td>
+                                <a href="#" onclick="selectMaterialThickn(@item.materialThicknId)"><i class="glyphicon glyphicon-pencil"></i></a>
+                            </td>
+
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script>
+        var oTable;
+        $(function () {
+            oTable = $("#myDataTable").DataTable({
+                "language": {
+                    "url": "//cdn.datatables.net/plug-ins/1.10.16/i18n/Swedish.json"
+                }
+            });
+        });
+
+
+
+</script>
+
+
+

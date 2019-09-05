@@ -1,0 +1,70 @@
+﻿@{
+    Layout = null;
+}
+
+
+<div class="well col-sm-12"  style="margin-top : 10px;">
+    <div class="row" >
+        <div class="col-sm-12 col-md-12 col-lg-12" >
+            <table class="table table-sm table-striped">
+                <thead>
+                    <tr style="font-size:small; font-weight:bold">
+                        <th>Kalkyl</th>
+                        <th style="text-align : right;">Pris netto</th>
+                        <th style=" text-align : right;">Pris brutto</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="font-size:small">
+                        <td style="vertical-align: bottom;">
+                            @*<b>Materialkostnad</b> (Ytterdiameter + marginal * 2 * Ytterdiameter + marginal * 2 * 100 - återanvänbart material i %) * kostnad/mm2)*@
+                            <b>Material</b>
+                        </td>
+                        @{Double netPrice = Math.Round(ViewBag.gasket.materialArea * ViewBag.gasket.materialCostMm2, 2);}
+                        @{ Double salesPrice = Math.Round((ViewBag.gasket.materialArea * ViewBag.gasket.materialCostMm2) * ViewBag.gasket.materialMarginPercent, 2);}
+                        <td style="vertical-align: bottom; text-align : right;">@netPrice</td>
+                        <td style="vertical-align: bottom; text-align : right;">@salesPrice</td>
+
+                    </tr>
+                    <tr style="font-size:small">
+                        <td style="vertical-align: bottom;">
+                            @*<b>Maskintid</b> ((Yttre omkrets + inre omkrets) / skärhastighet (mm/sek) * maskinkostnad/360)*@
+                            <b>Maskin</b>
+                        </td>
+                        @{Double netMaskin = Math.Round((((ViewBag.gasket.cuttingLengthOuterMm + ViewBag.gasket.cuttingLengthInnerMm)) / ViewBag.gasket.cuttingSpeedMmSek) * (Convert.ToDouble(ViewBag.workingCost.cuttingHourNet / 360)), 2);}
+                        @{Double salesMaskin = Math.Round((((ViewBag.gasket.cuttingLengthOuterMm + ViewBag.gasket.cuttingLengthInnerMm)) / ViewBag.gasket.cuttingSpeedMmSek) * (Convert.ToDouble(ViewBag.workingCost.cuttingHourSales / 360)), 2);}
+
+                        <td style="vertical-align: bottom; text-align : right;">@netMaskin</td>
+                        <td style="vertical-align: bottom; text-align : right; ">@salesMaskin</td>
+                    </tr>
+                    <tr style="font-size:small">
+                        <td style="vertical-align: bottom;">
+                            @* <b>Hanteringstid</b>  Hanteringstid * hanteringskostnad/360)*@
+                            <b>Hantering</b>
+                        </td>
+                        @{Double netHandling = Math.Round(Convert.ToDouble(ViewBag.gasket.handlingTime) * Convert.ToDouble((ViewBag.workingCost.handlingHourNet / 3600)), 2); }
+                        @{Double salesHandling = Math.Round(Convert.ToDouble(ViewBag.gasket.handlingTime) * Convert.ToDouble((ViewBag.workingCost.handlingHourSales / 3600)), 2); }
+                        <td style="vertical-align: bottom; text-align : right;">@netHandling</td>
+                        <td style="vertical-align: bottom; text-align : right;">@salesHandling</td>
+                    </tr>
+                    <tr style="font-size:small">
+                        <td style="vertical-align: bottom;">
+                            <b>Summa</b>
+                        </td>
+                        @{Double netTotal = netPrice + netMaskin + netHandling; }
+                        @{Double salesTotal = salesPrice + salesMaskin + salesHandling; }
+                        <td style="vertical-align: bottom; text-align : right;">@netTotal</td>
+                        <td style="vertical-align: bottom; text-align : right;">@salesTotal</td>
+                    </tr>
+                    @Html.Hidden("calcSalesTotal", salesTotal)
+                    @Html.Hidden("calcNetTotal", netTotal)
+
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+

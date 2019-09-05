@@ -1,0 +1,361 @@
+﻿@model GaskMan.Models.CGasket
+
+@{
+    Layout = null;
+}
+
+<style>
+    .Error {
+        color: red;
+    }
+
+    .Label {
+        margin-top: 8px;
+        font-weight: normal;
+    }
+</style>
+
+
+<div class="row" style="margin-top:20px;">
+    <form id="myForm">
+        <div class="row">
+            <div class="well col-sm-12 col-md-12 col-lg-12">
+                <h4 style="color:darkseagreen">Arbeta med packning</h4>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4 col-md-4 col-lg-4">
+                    @Html.HiddenFor(m => m.gasketId)
+                    @Html.Hidden("Name", "Value")
+                    @Html.Hidden("saveInnerDiam", ViewBag.saveInnerDiam as string)
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.gasketTypeId, new { @class = "Label" })
+                        @Html.DropDownListFor(m => m.gasketTypeId, ViewBag.gasketTypeList as SelectList, "-- Välj packningstyp --", new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.gasketTypeId, "", new { @class = "Error" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.description, new { @class = "Label" })
+                        @Html.TextBoxFor(m => m.description, new { @class = "form-control", @placeholder = "Beskrivning", @maxlength = "50" })
+                        @Html.ValidationMessageFor(m => m.description, "", new { @class = "Error" })
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.materialThicknId, new { @class = "Label" })
+                        @Html.DropDownListFor(m => m.materialThicknId, ViewBag.ddList as SelectList, "-- Välj material --", new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.materialThicknId, "", new { @class = "Error" })
+                    </div>
+                    <div id="idGasketType1">
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.outerDiam, new { @class = "Label" })
+                            @Html.TextBoxFor(m => m.outerDiam, new { @class = "form-control", @placeholder = "Ytterdiameter", @maxlength = "20" })
+                            @Html.ValidationMessageFor(m => m.outerDiam, "", new { @class = "Error" })
+                        </div>
+                    </div>
+                    <div id="idGasketType3">
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Type3GasketLength, new { @class = "Label" })
+                            @Html.TextBoxFor(m => m.Type3GasketLength, new { @class = "form-control", @placeholder = "Längd (mm)", @maxlength = "20" })
+                            @Html.ValidationMessageFor(m => m.Type3GasketLength, "", new { @class = "Error" })
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Type3GasketWidth, new { @class = "Label" })
+                            @Html.TextBoxFor(m => m.Type3GasketWidth, new { @class = "form-control", @placeholder = "Bredd (mm)", @maxlength = "20" })
+                            @Html.ValidationMessageFor(m => m.Type3GasketLength, "", new { @class = "Error" })
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.innerDiam, new { @class = "Label" })
+                        @Html.TextBoxFor(m => m.innerDiam, new { @class = "form-control", @placeholder = "Innerdiameter", @maxlength = "20" })
+                        @Html.ValidationMessageFor(m => m.innerDiam, "", new { @class = "Error" })
+                    </div>
+                    <div id="idGasketType2And3">
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Type2SecHoleCount, new { @class = "Label" })
+                            @Html.TextBoxFor(m => m.Type2SecHoleCount, new { @class = "form-control", @placeholder = "Antal yttre hål", @maxlength = "20" })
+                            @Html.ValidationMessageFor(m => m.Type2SecHoleCount, "", new { @class = "Error" })
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Type2SecHoleDiam, new { @class = "Label" })
+                            @Html.TextBoxFor(m => m.Type2SecHoleDiam, new { @class = "form-control", @placeholder = "Diameter för yttre hål", @maxlength = "20" })
+                            @Html.ValidationMessageFor(m => m.Type2SecHoleDiam, "", new { @class = "Error" })
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3 col-md-3 col-lg-3">
+                    <img id="idImage" src="~/Images/p1.jpg" alt="" style="height: auto; width: auto; max-width: 100px; padding-left : 0px; margin-left: 0px;" />
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.reusableMaterial, new { @class = "Label" })
+                        @Html.TextBoxFor(m => m.reusableMaterial, new { @class = "form-control", @placeholder = "Återanvändbart material", @maxlength = "20" })
+                        @Html.ValidationMessageFor(m => m.reusableMaterial, "", new { @class = "Error" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.cuttingMargin, new { @class = "Label" })
+                        @Html.TextBoxFor(m => m.cuttingMargin, new { @class = "form-control", @placeholder = "Skärmarginal", @maxlength = "20" })
+                        @Html.ValidationMessageFor(m => m.cuttingMargin, "", new { @class = "Error" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.handlingTime, new { @class = "Label" })
+                        @Html.TextBoxFor(m => m.handlingTime, new { @class = "form-control", @placeholder = "Hanteringstid", @maxlength = "20" })
+                        @Html.ValidationMessageFor(m => m.handlingTime, "", new { @class = "Error" })
+                    </div>
+                    <div class="form-group">
+                        @Html.Label("Rabatt i %", new { @class = "Label" })
+                        @Html.TextBox("idDiscount", "", new { @class = "form-control", @placeholder = "Rabatt", @maxlength = "20" })
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.price, new { @class = "Label" })
+                        @Html.TextBoxFor(m => m.price, new { @class = "form-control", @placeholder = "Pris", @maxlength = "20" })
+                        @Html.ValidationMessageFor(m => m.price, "", new { @class = "Error" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.note, new { @class = "Label" })
+                        <br />
+                        @Html.TextAreaFor(m => m.note, new { @cols = "200", @rows = "4", @style = "width:100%;", @class = "Label" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.standardPriceProduct, new { @class = "Label" })
+                        @Html.CheckBoxFor(m => m.standardPriceProduct, new { @checked = "unchecked" })
+                    </div>
+
+                </div>
+                @Html.Hidden("idNetPrice", "0")
+                <div class="col-sm-3 col-md-3 col-lg-3">
+                    <div class="form-group">
+                        @Html.Label("Ordinarie pris", new { @class = "Label" })
+                        @Html.TextBox("idOrdPrice", "", new { @class = "form-control", @placeholder = "Ordinarie pris", @maxlength = "20", @readonly = "readonly" })
+                    </div>
+                    <div class="form-group">
+                        @Html.Label("Marginal", new { @class = "Label" })
+                        @Html.TextBox("idMargin", "", new { @class = "form-control", @placeholder = "Marginal", @maxlength = "20", @readonly = "readonly" })
+                    </div>
+                    <div class="form-group">
+                        @Html.Label("Marginal i %", new { @class = "Label" })
+                        @Html.TextBox("idMarginPercent", "", new { @class = "form-control", @placeholder = "Marginal i %", @maxlength = "20", @readonly = "readonly" })
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-12" style="background-color : lightblue">
+                        <div id="gasketCalcDiv">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="clearfix"></div>
+            <div class="row" style="margin-top:20px;">
+                <div class="well col-sm-12">
+                    <span>
+                        <a href="#" class="btn btn-default" onclick="selectGasket('0')">&nbsp;Ny&nbsp;</a>
+                        <a href="#" class="btn btn-success" onclick="saveGasket()">&nbsp;Spara&nbsp;</a>
+                        <a href="#" class="btn btn-default" onclick="getGasketCalc(1)">&nbsp;Beräkna&nbsp;</a>
+                        <a href="#" class="btn btn-default" onclick="toGasketList()">&nbsp;Till Listan&nbsp;</a>
+                    </span>
+                    <div class="col-md-12" id="ErrorTextOrder" style="color:red">
+                        <span>@ViewBag.errorTxt</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-waitingfor/1.2.7/bootstrap-waitingfor.min.js"></script>
+<script>
+
+    $(document).ready(function () {
+        getGasketCalc(0);
+        hideAndShow();
+    });
+
+    $("#gasketTypeId").change(function () {
+        hideAndShow();
+    });
+
+    var saveGasket = function () {
+        $("#ErrorTextOrder").html("");
+        if (!$("#myForm").valid())
+            return;
+        waitingDialog.show('Sparar packning....');
+        var myformdata = $("#myForm").serialize();
+        $.post("/Gasket/saveGasket", myformdata, function (response) {
+            if (response.message == "identError") {
+                waitingDialog.hide();
+                window.location.href = "/Home/Login";
+                return;
+            }
+            if (response.message != "" || response.errMessage != "") {
+                if (response.message != "")
+                    $("#ErrorTextOrder").html("<span>" + response.message + "</span>");
+                else if (response.errMessage != "")
+                    $("#ErrorTextOrder").html("<span>" + response.errMessage + " (Felkod : " + response.errCode + ")</span>");
+                waitingDialog.hide();
+            }
+            else {
+                $("#gasketId").val(response.gasketId);
+                //$("#gasketTypeId").val(response.gasketTypeId);
+                getGasketCalc(0);
+            }
+        }, "json");
+    }
+
+    var toGasketList = function () {
+        $("#gGasketListDiv").show();
+        $("#gGasketDetailDiv").empty();
+        $("#gGasketDetailDiv").hide();
+        getRegisteredGasket();
+    }
+
+    var getGasketCalc = function (showDialog) {
+        $("#gasketCalcDiv").empty();
+        var gasketId = $("#gasketId").val();
+        if (gasketId == 0) {
+            return;
+        }
+        if (showDialog == 1) {
+            waitingDialog.show('Beräknar....');
+        }
+        var data = "gasketId=" + gasketId;
+        $.post("/Gasket/getGasketCalc", data, function (response) {
+            $("#gasketCalcDiv").html(response);
+            waitingDialog.hide();
+            $("#idOrdPrice").val($("#calcSalesTotal").val());
+            $("#idNetPrice").val($("#calcNetTotal").val());
+            var price = $("#price").val();
+            if (price == 0) {
+                $("#price").val($("#calcSalesTotal").val());
+                $("#idDiscount").val("0");
+            }
+            calcFromPrice();
+        }, "html");
+    }
+
+    $("#price").focusout(function () {
+        if ($("#price").val() == "")
+            return;
+        calcFromPrice();
+    });
+
+    var calcFromPrice = function () {
+        var gasketId = $("#gasketId").val();
+        if (gasketId == "0")
+            return;
+        var ordPrice = $("#idOrdPrice").val();
+        ordPrice = Number(ordPrice.replace(",", "."));
+        var price = $("#price").val();
+        price = Number(price.replace(",", "."));
+        if (price != 0 && ordPrice != 0) {
+            var discount = ordPrice - price;
+            var discountPercent = (discount / ordPrice) * 100;
+            discountPercent = discountPercent.toFixed(2);
+            $("#idDiscount").val(discountPercent.toString().replace(".", ","));
+        }
+        calculateMargin();
+
+    }
+
+    $("#idDiscount").focusout(function () {
+        calcFromDiscount();
+    });
+
+    $("#innerDiam").focusout(function () {
+        var innerDiam = $("#innerDiam").val();
+        if (innerDiam == "")
+            return;
+        innerDiam = Number(innerDiam);
+        var saveInnerDiam = Number($("#saveInnerDiam").val());
+        if (innerDiam == saveInnerDiam)
+            return;
+        reusableMaterialDefault();
+        $("#saveInnerDiam").val($("#innerDiam").val());
+    });
+
+
+
+    var calcFromDiscount = function () {
+        var gasketId = $("#gasketId").val();
+        if (gasketId == "0")
+            return;
+        var ordPrice = $("#idOrdPrice").val();
+        ordPrice = Number(ordPrice.replace(",", "."));
+        var discount = $("#idDiscount").val();
+        discount = Number(discount.replace(",", "."));
+        if (ordPrice != 0) {
+            var price = ordPrice * (1 - (discount / 100));
+            $("#price").val(price.toFixed(2).toString().replace(".", ","));
+        }
+        calculateMargin();
+    }
+
+    var calculateMargin = function () {
+        var gasketId = $("#gasketId").val();
+        if (gasketId == "0")
+            return;
+        var price = Number($("#price").val().replace(",", "."));
+        var netPrice = Number($("#idNetPrice").val().replace(",", "."));
+        if (price == 0 || netPrice == 0) {
+            $("#idMargin").val("");
+            $("#idMarginPercent").val("");
+            return;
+        }
+        var margin = price - netPrice;
+        var marginPercent = (margin / price) * 100;
+        $("#idMargin").val(margin.toFixed(2));
+        $("#idMarginPercent").val(marginPercent.toFixed(2).toString() + "%");
+    }
+
+    var hideAndShow = function () {
+        var gasketTypeId = $("#gasketTypeId").val();
+        if (gasketTypeId == "")
+            gasketTypeId = 1;        
+        if (gasketTypeId == 1) {
+            $("#idGasketType1").show();            
+            $("#idGasketType2And3").hide();
+            $("#idGasketType3").hide();
+            $("#idImage").attr("src", "/Images/p1.jpg");
+        }
+        if (gasketTypeId == 2) {
+            $("#idGasketType2And3").show();
+            $("#idGasketType3").hide();
+            $("#idImage").attr("src", "/Images/p2.jpg");
+        }
+        else if (gasketTypeId == 3) {
+            $("#idGasketType1").hide();
+            $("#idGasketType2And3").show();
+            $("#idGasketType3").show();
+            $("#idImage").attr("src", "/Images/p3.jpg");
+        }
+    }
+
+    var reusableMaterialDefault = function () {
+        var innerDiam = $("#innerDiam").val();
+        waitingDialog.show('Beräknar återanvändbart material....');
+        var data = "innerDiam=" + innerDiam;
+        $.post("/ReuseMat/CalcReusableDef", data, function (response) {
+            waitingDialog.hide();
+            if (response.message == "identError") {
+                waitingDialog.hide();
+                window.location.href = "/Home/Login";
+                return;
+            }
+            if (response.message != "") {
+                $("#ErrorTextOrder").html("<span>" + response.message + "</span>");
+            }
+            else {
+                $("#reusableMaterial").val(response.reusableMaterial);
+            }
+        }, "json");
+    }
+
+</script>
+
+

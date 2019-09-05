@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SManApi" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SManApi" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ReparatorCL">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AnvID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ErrCode" type="xs:int" />
+      <xs:element minOccurs="0" name="ErrMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RepKatID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Reparator" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="gasketLevel" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReparatorCL" nillable="true" type="tns:ReparatorCL" />
+  <xs:complexType name="ArrayOfReparatorCL">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ReparatorCL" nillable="true" type="tns:ReparatorCL" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfReparatorCL" nillable="true" type="tns:ArrayOfReparatorCL" />
+  <xs:complexType name="ArrayOfServiceHuvudCL">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ServiceHuvudCL" nillable="true" type="tns:ServiceHuvudCL" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfServiceHuvudCL" nillable="true" type="tns:ArrayOfServiceHuvudCL" />
+  <xs:complexType name="ServiceHuvudCL">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ErrCode" type="xs:int" />
+      <xs:element minOccurs="0" name="ErrMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ErtOrdernr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Kund" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="KundNamn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OrderAdminID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OrderAdminNamn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OrderDatum" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="OrderLabel" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VartOrdernr" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServiceHuvudCL" nillable="true" type="tns:ServiceHuvudCL" />
+  <xs:complexType name="ArrayOfServiceRadListCL">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ServiceRadListCL" nillable="true" type="tns:ServiceRadListCL" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfServiceRadListCL" nillable="true" type="tns:ArrayOfServiceRadListCL" />
+  <xs:complexType name="ServiceRadListCL">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Anlaggningsnr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Arbetsordernr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Avdelning" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Dn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ErrCode" type="xs:int" />
+      <xs:element minOccurs="0" name="ErrMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Fabrikat" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdNr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="KundensPosNr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Pn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RadNr" type="xs:int" />
+      <xs:element minOccurs="0" name="VartOrdernr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VentilKategori" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Ventiltyp" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="hosKund" type="xs:int" />
+      <xs:element minOccurs="0" name="klar" type="xs:int" />
+      <xs:element minOccurs="0" name="paVerkstad" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServiceRadListCL" nillable="true" type="tns:ServiceRadListCL" />
+  <xs:complexType name="ServiceRadCL">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AlternateKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Anmarkning" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AntalBoxpack" type="xs:int" />
+      <xs:element minOccurs="0" name="AntalBrostpack" type="xs:int" />
+      <xs:element minOccurs="0" name="Arbete" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Arbetsordernr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Attention" type="xs:int" />
+      <xs:element minOccurs="0" name="BoxpackMaterial" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Boxpackning" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BrostpackMaterial" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Brostpackning" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ErrCode" type="xs:int" />
+      <xs:element minOccurs="0" name="ErrMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Kontroll" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LagesstallArbete" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LagesstallDelar" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LagesstallKontroll" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OvrKomment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Radnr" type="xs:int" />
+      <xs:element minOccurs="0" name="Reparator" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Reparator2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Reparator3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Reservdelar" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StalldonArbete" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StalldonDelar" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StalldonKontroll" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VartOrdernr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VentilID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="hosKund" type="xs:int" />
+      <xs:element minOccurs="0" name="klar" type="xs:int" />
+      <xs:element minOccurs="0" name="paVerkstad" type="xs:int" />
+      <xs:element minOccurs="0" name="valveOpen" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServiceRadCL" nillable="true" type="tns:ServiceRadCL" />
+  <xs:complexType name="VentilCL">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Anlaggningsnr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Avdelning" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Dn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Dn2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ErrCode" type="xs:int" />
+      <xs:element minOccurs="0" name="ErrMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Fabrikat" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdNr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="KundID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LagesstallFabrikat" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LagesstallIDNr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Lagesstallartyp" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Oppningstryck" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Plan" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Pn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Pn2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Position" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Rum" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StalldonArtnr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StalldonFabrikat" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StalldonIDNr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Stalldonstyp" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VentilID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VentilkatID" type="xs:int" />
+      <xs:element minOccurs="0" name="Ventilkategori" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Ventiltyp" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="forceSave" type="xs:boolean" />
+      <xs:element minOccurs="0" name="insideDiameter" type="xs:decimal" />
+      <xs:element minOccurs="0" name="outsideDiameter" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VentilCL" nillable="true" type="tns:VentilCL" />
+  <xs:complexType name="ArrayOfVentilCL">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VentilCL" nillable="true" type="tns:VentilCL" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVentilCL" nillable="true" type="tns:ArrayOfVentilCL" />
+  <xs:complexType name="ArrayOfVentilKategoriCL">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VentilKategoriCL" nillable="true" type="tns:VentilKategoriCL" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVentilKategoriCL" nillable="true" type="tns:ArrayOfVentilKategoriCL" />
+  <xs:complexType name="VentilKategoriCL">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ErrCode" type="xs:int" />
+      <xs:element minOccurs="0" name="ErrMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VentilkatID" type="xs:int" />
+      <xs:element minOccurs="0" name="Ventilkategori" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VentilKategoriCL" nillable="true" type="tns:VentilKategoriCL" />
+  <xs:complexType name="ArrayOfFabrikatCL">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FabrikatCL" nillable="true" type="tns:FabrikatCL" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFabrikatCL" nillable="true" type="tns:ArrayOfFabrikatCL" />
+  <xs:complexType name="FabrikatCL">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ErrCode" type="xs:int" />
+      <xs:element minOccurs="0" name="ErrMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Fabrikat" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FabrikatCL" nillable="true" type="tns:FabrikatCL" />
+  <xs:complexType name="ArrayOfDnCL">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DnCL" nillable="true" type="tns:DnCL" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDnCL" nillable="true" type="tns:ArrayOfDnCL" />
+  <xs:complexType name="DnCL">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Dn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ErrCode" type="xs:int" />
+      <xs:element minOccurs="0" name="ErrMessage" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DnCL" nillable="true" type="tns:DnCL" />
+  <xs:complexType name="ArrayOfPnCL">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PnCL" nillable="true" type="tns:PnCL" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPnCL" nillable="true" type="tns:ArrayOfPnCL" />
+  <xs:complexType name="PnCL">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ErrCode" type="xs:int" />
+      <xs:element minOccurs="0" name="ErrMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Pn" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PnCL" nillable="true" type="tns:PnCL" />
+  <xs:complexType name="ArrayOfArtikelCL">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ArtikelCL" nillable="true" type="tns:ArtikelCL" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfArtikelCL" nillable="true" type="tns:ArrayOfArtikelCL" />
+  <xs:complexType name="ArtikelCL">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Anm1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Anm2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Artnamn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Artnr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ErrCode" type="xs:int" />
+      <xs:element minOccurs="0" name="ErrMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LevID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LevNamn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="kategori" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArtikelCL" nillable="true" type="tns:ArtikelCL" />
+  <xs:complexType name="ArrayOfReservdelCL">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ReservdelCL" nillable="true" type="tns:ReservdelCL" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfReservdelCL" nillable="true" type="tns:ArrayOfReservdelCL" />
+  <xs:complexType name="ReservdelCL">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Antal" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ArtNamn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Artnr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Enhet" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ErrCode" type="xs:int" />
+      <xs:element minOccurs="0" name="ErrMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Faktureras" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LevID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Radnr" type="xs:int" />
+      <xs:element minOccurs="0" name="ReservNr" type="xs:int" />
+      <xs:element minOccurs="0" name="VartOrdernr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="getFromCS" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReservdelCL" nillable="true" type="tns:ReservdelCL" />
+  <xs:complexType name="ArrayOfOpenDateCL">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OpenDateCL" nillable="true" type="tns:OpenDateCL" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOpenDateCL" nillable="true" type="tns:ArrayOfOpenDateCL" />
+  <xs:complexType name="OpenDateCL">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Datum" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ErrCode" type="xs:int" />
+      <xs:element minOccurs="0" name="ErrMessage" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OpenDateCL" nillable="true" type="tns:OpenDateCL" />
+  <xs:complexType name="ServRadRepTidCL">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AnvID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Datum" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ErrCode" type="xs:int" />
+      <xs:element minOccurs="0" name="ErrMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="RepKatID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SalartID" type="xs:int" />
+      <xs:element minOccurs="0" name="SrAltKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Tid" type="xs:decimal" />
+      <xs:element minOccurs="0" name="timeTypeID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServRadRepTidCL" nillable="true" type="tns:ServRadRepTidCL" />
+  <xs:complexType name="ArrayOfServRadRepTidCL">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ServRadRepTidCL" nillable="true" type="tns:ServRadRepTidCL" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfServRadRepTidCL" nillable="true" type="tns:ArrayOfServRadRepTidCL" />
+  <xs:complexType name="PictureCL">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BildNr" type="xs:int" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ErrCode" type="xs:int" />
+      <xs:element minOccurs="0" name="ErrMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PictCatID" type="xs:int" />
+      <xs:element minOccurs="0" name="PictIdent" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Radnr" type="xs:int" />
+      <xs:element minOccurs="0" name="VartOrdernr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pictSize" type="xs:long" />
+      <xs:element minOccurs="0" name="pictType" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PictureCL" nillable="true" type="tns:PictureCL" />
+  <xs:complexType name="ArrayOfPictureCL">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PictureCL" nillable="true" type="tns:PictureCL" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPictureCL" nillable="true" type="tns:ArrayOfPictureCL" />
+  <xs:complexType name="ArrayOfStandardTextCL">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StandardTextCL" nillable="true" type="tns:StandardTextCL" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStandardTextCL" nillable="true" type="tns:ArrayOfStandardTextCL" />
+  <xs:complexType name="StandardTextCL">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ErrCode" type="xs:int" />
+      <xs:element minOccurs="0" name="ErrMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Kategori" type="xs:int" />
+      <xs:element minOccurs="0" name="KategoriBeskr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StdTextID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Text" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ventilkatID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StandardTextCL" nillable="true" type="tns:StandardTextCL" />
+  <xs:complexType name="ArrayOfPictCatCL">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PictCatCL" nillable="true" type="tns:PictCatCL" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPictCatCL" nillable="true" type="tns:ArrayOfPictCatCL" />
+  <xs:complexType name="PictCatCL">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ErrCode" type="xs:int" />
+      <xs:element minOccurs="0" name="ErrMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PictCatID" type="xs:int" />
+      <xs:element minOccurs="0" name="PictCatName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Step" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PictCatCL" nillable="true" type="tns:PictCatCL" />
+  <xs:complexType name="VersionCL">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="APIVersion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ErrCode" type="xs:int" />
+      <xs:element minOccurs="0" name="ErrMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="dbVersion" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VersionCL" nillable="true" type="tns:VersionCL" />
+  <xs:complexType name="ArrayOfRepTidListCL">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RepTidListCL" nillable="true" type="tns:RepTidListCL" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRepTidListCL" nillable="true" type="tns:ArrayOfRepTidListCL" />
+  <xs:complexType name="RepTidListCL">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ErrCode" type="xs:int" />
+      <xs:element minOccurs="0" name="ErrMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ServRadRepTidId" type="xs:int" />
+      <xs:element minOccurs="0" name="anvID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="datum" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="position" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="radnr" type="xs:int" />
+      <xs:element minOccurs="0" name="reparator" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="rowDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="salartName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="srAltKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tid" type="xs:decimal" />
+      <xs:element minOccurs="0" name="timeType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="timeTypeID" type="xs:int" />
+      <xs:element minOccurs="0" name="vartOrdernr" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RepTidListCL" nillable="true" type="tns:RepTidListCL" />
+  <xs:complexType name="ArrayOfTimeTypeCL">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TimeTypeCL" nillable="true" type="tns:TimeTypeCL" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTimeTypeCL" nillable="true" type="tns:ArrayOfTimeTypeCL" />
+  <xs:complexType name="TimeTypeCL">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ErrCode" type="xs:int" />
+      <xs:element minOccurs="0" name="ErrMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TimeType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TimeTypeID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TimeTypeCL" nillable="true" type="tns:TimeTypeCL" />
+  <xs:complexType name="ArrayOfSalartCL">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SalartCL" nillable="true" type="tns:SalartCL" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSalartCL" nillable="true" type="tns:ArrayOfSalartCL" />
+  <xs:complexType name="SalartCL">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ErrCode" type="xs:int" />
+      <xs:element minOccurs="0" name="ErrMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SalartID" type="xs:int" />
+      <xs:element minOccurs="0" name="SalartName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SalartTypeID" type="xs:int" />
+      <xs:element minOccurs="0" name="Unit" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SalartCL" nillable="true" type="tns:SalartCL" />
+  <xs:complexType name="ArrayOfRepKatCL">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RepKatCL" nillable="true" type="tns:RepKatCL" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRepKatCL" nillable="true" type="tns:ArrayOfRepKatCL" />
+  <xs:complexType name="RepKatCL">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ErrCode" type="xs:int" />
+      <xs:element minOccurs="0" name="ErrMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RepKat" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RepKatID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RepKatCL" nillable="true" type="tns:RepKatCL" />
+  <xs:complexType name="ServHuvRepTidCL">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AnvId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Datum" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ErrCode" type="xs:int" />
+      <xs:element minOccurs="0" name="ErrMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="RepKatID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SalartID" type="xs:int" />
+      <xs:element minOccurs="0" name="Tid" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TimeTypeID" type="xs:int" />
+      <xs:element minOccurs="0" name="VartOrdernr" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServHuvRepTidCL" nillable="true" type="tns:ServHuvRepTidCL" />
+  <xs:complexType name="ArrayOfServHuvRepTidCL">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ServHuvRepTidCL" nillable="true" type="tns:ServHuvRepTidCL" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfServHuvRepTidCL" nillable="true" type="tns:ArrayOfServHuvRepTidCL" />
+  <xs:complexType name="TimeRep2ProcessCL">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmailCreated" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ErrCode" type="xs:int" />
+      <xs:element minOccurs="0" name="ErrMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LinkAdded" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LinkURL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Ordered" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ReportStatus" type="xs:int" />
+      <xs:element minOccurs="0" name="ReportType" type="xs:int" />
+      <xs:element minOccurs="0" name="VartOrdernr" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TimeRep2ProcessCL" nillable="true" type="tns:TimeRep2ProcessCL" />
+  <xs:complexType name="ArrayOfKundEmailCL">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KundEmailCL" nillable="true" type="tns:KundEmailCL" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKundEmailCL" nillable="true" type="tns:ArrayOfKundEmailCL" />
+  <xs:complexType name="KundEmailCL">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ErrCode" type="xs:int" />
+      <xs:element minOccurs="0" name="ErrMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Kontaktperson" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SelectedForTR" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="KundEmailCL" nillable="true" type="tns:KundEmailCL" />
+  <xs:complexType name="ArrayOfTimeRep2WeekCL">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TimeRep2WeekCL" nillable="true" type="tns:TimeRep2WeekCL" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTimeRep2WeekCL" nillable="true" type="tns:ArrayOfTimeRep2WeekCL" />
+  <xs:complexType name="TimeRep2WeekCL">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Approved" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ErrCode" type="xs:int" />
+      <xs:element minOccurs="0" name="ErrMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="VartOrdernr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="YearWeek" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TimeRep2WeekCL" nillable="true" type="tns:TimeRep2WeekCL" />
+  <xs:complexType name="DrawingCL">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DrawingIdent" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DrawingNo" type="xs:int" />
+      <xs:element minOccurs="0" name="DrawingSize" type="xs:long" />
+      <xs:element minOccurs="0" name="ErrCode" type="xs:int" />
+      <xs:element minOccurs="0" name="ErrMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FileType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ventil_id" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DrawingCL" nillable="true" type="tns:DrawingCL" />
+  <xs:complexType name="ArrayOfDrawingCL">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DrawingCL" nillable="true" type="tns:DrawingCL" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDrawingCL" nillable="true" type="tns:ArrayOfDrawingCL" />
+</xs:schema>

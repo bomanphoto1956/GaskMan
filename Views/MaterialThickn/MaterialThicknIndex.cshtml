@@ -1,0 +1,65 @@
+﻿@{
+    ViewBag.Title = "MaterialThicknIndex";
+}
+
+<div id="gMaterialThicknListDiv">
+    <div class="well" style="margin-top:5px;">
+        <div class="col-md-10 col-sm-10 col-lg-10">
+            <h3 style="margin-top:0px; color:darkseagreen">Registrerade materialtjocklekar</h3>
+        </div>
+
+        <div class="clearfix"></div>
+
+    </div>
+
+    <div id="gMaterialThicknDTDiv"></div>
+    <br />
+
+
+    <div class="well">
+        <span>
+            <a href="#" class="btn btn-success" onclick="selectMaterialThickn('0')">&nbsp;Ny&nbsp;</a><button type="button" class="btn btn-default" style="margin-left:10px;" onclick="getRegisteredMaterial()">
+                <span class="glyphicon glyphicon-refresh"></span> Refresh
+            </button>
+        </span>
+        <span id="ErrorTextId" style="color:red; margin-bottom:5px; margin-left:10px">
+        </span>
+    </div>
+</div>
+
+<div id="gMaterialThicknDetailDiv">
+</div>
+
+
+
+<script>
+
+
+    $(document).ready(function () {
+        getRegisteredMaterialThickn();
+    });
+
+
+
+    var getRegisteredMaterialThickn = function () {      
+        $.post("/MaterialThickn/getRegisteredMaterialThickn", function (response) {
+            $("#gMaterialThicknDTDiv").empty();
+            $("#gMaterialThicknDTDiv").append(response);            
+        }, "html");
+    }
+
+    var selectMaterialThickn = function (materialThicknId) {
+        var data = "materialThicknId=" + materialThicknId;
+        $.post("/MaterialThickn/selectMaterialThickn", data, function (response) {
+            $("#gMaterialThicknListDiv").hide();
+            $("#gMaterialThicknDetailDiv").empty();
+            $("#gMaterialThicknDetailDiv").append(response);
+            $("#gMaterialThicknDetailDiv").show();
+        }, "html");
+    }
+
+</script>
+
+
+
+

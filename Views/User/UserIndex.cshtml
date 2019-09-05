@@ -1,0 +1,64 @@
+﻿@{
+    ViewBag.Title = "UserIndex";
+}
+
+<div id="gUserListDiv">
+    <div class="well" style="margin-top:5px;">
+        <div class="col-md-10 col-sm-10 col-lg-10">
+            <h3 style="margin-top:0px; color:darkseagreen">Registrerade användare</h3>
+        </div>
+
+        <div class="clearfix"></div>
+
+    </div>
+
+    <div id="gUserDTDiv"></div>
+    <br />
+
+
+    <div class="well">
+        <span>
+            <a href="#" class="btn btn-success" onclick="selectUser('')">&nbsp;Ny&nbsp;</a><button type="button" class="btn btn-default" style="margin-left:10px;" onclick="getRegisteredUsers()">
+                <span class="glyphicon glyphicon-refresh"></span> Refresh
+            </button>
+        </span>
+        <span id="ErrorTextId" style="color:red; margin-bottom:5px; margin-left:10px">
+        </span>
+    </div>
+</div>
+
+<div id="gUserDetailDiv">
+</div>
+
+
+
+
+<script>
+
+
+    $(document).ready(function () {
+        getRegisteredUsers();
+    });
+
+
+
+    var getRegisteredUsers = function () {
+        $.post("/User/getRegisteredUsers", function (response) {
+            $("#gUserDTDiv").empty();
+            $("#gUserDTDiv").append(response);            
+        }, "html");
+    }
+
+    var selectUser = function (userId) {
+        var data = "userId=" + userId;
+        $.post("/User/selectUser", data, function (response) {
+            $("#gUserListDiv").hide();
+            $("#gUserDetailDiv").empty();
+            $("#gUserDetailDiv").append(response);
+            $("#gUserDetailDiv").show();
+        }, "html");
+    }
+
+</script>
+
+

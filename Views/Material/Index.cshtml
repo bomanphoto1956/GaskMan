@@ -1,0 +1,63 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<div id="gMaterialListDiv">
+    <div class="well" style="margin-top:5px;">
+        <div class="col-md-10 col-sm-10 col-lg-10">
+            <h3 style="margin-top:0px; color:darkseagreen">Registrerade material</h3>
+        </div>
+
+        <div class="clearfix"></div>
+
+    </div>
+
+    <div id="gMaterialDTDiv"></div>
+    <br />
+
+
+    <div class="well">
+        <span>
+            <a href="#" class="btn btn-success" onclick="selectMaterial('0')">&nbsp;Ny&nbsp;</a><button type="button" class="btn btn-default" style="margin-left:10px;" onclick="getRegisteredMaterial()">
+                <span class="glyphicon glyphicon-refresh"></span> Refresh
+            </button>
+        </span>
+        <span id="ErrorTextId" style="color:red; margin-bottom:5px; margin-left:10px">
+        </span>
+    </div>
+</div>
+
+<div id="gMaterialDetailDiv">
+</div>
+
+
+<script>
+
+
+    $(document).ready(function () {
+        getRegisteredMaterial();
+    });
+
+
+
+    var getRegisteredMaterial = function () {
+        $.post("/Material/getRegisteredMaterial", function (response) {
+            $("#gMaterialDTDiv").empty();
+            $("#gMaterialDTDiv").append(response);            
+        }, "html");
+    }
+
+    var selectMaterial = function (materialId) {        
+        var data = "materialId=" + materialId;
+        $.post("/Material/selectMaterial", data, function (response) {
+            $("#gMaterialListDiv").hide();
+            $("#gMaterialDetailDiv").empty();
+            $("#gMaterialDetailDiv").append(response);            
+            $("#gMaterialDetailDiv").show();
+        }, "html");
+    }
+   
+
+</script>
+

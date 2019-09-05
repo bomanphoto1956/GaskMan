@@ -1,0 +1,45 @@
+﻿<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-10 col-md-10 col-lg-10 col-md-offset-1 col-sd-offset-1 col-lg-offset-1">
+            <table class="table table-sm table-striped" id="myDataTable">
+                <thead>
+                    <tr style="font-size:small; font-weight:bold">
+                        <th>Material</th>
+                        <th>Kortnamn</th>
+                        <th>Ändra</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in ViewBag.materialList)
+                    {
+                        <tr style="font-size:small">
+                            <td>
+                                @item.material
+                            </td>
+                            <td>@item.materialShort</td>
+                            <td>
+                                <a href="#" onclick="selectMaterial(@item.materialId)"><i class="glyphicon glyphicon-pencil"></i></a>
+                            </td>
+
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+    <script>
+        var oTable;
+        $(function () {
+            oTable = $("#myDataTable").DataTable({
+                "language": {
+                    "url": "//cdn.datatables.net/plug-ins/1.10.16/i18n/Swedish.json"
+                }
+            });
+        });
+
+
+
+    </script>
+

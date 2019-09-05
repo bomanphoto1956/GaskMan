@@ -1,0 +1,99 @@
+﻿@model GaskMan.Models.CReuseMat
+
+@{
+    Layout = null;
+}
+
+<style>
+    .Error {
+        color: red;
+    }
+
+    .Label {
+        margin-top: 8px;
+        font-weight: normal;
+    }
+</style>
+
+
+<div class="row" style="margin-top:20px;">
+    <form id="myForm">
+        <div class="row">
+            <div class="well col-sm-10 col-md-10 col-lg-10">
+                <h4 style="color:darkseagreen">Registrera återanvändbart material</h4>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-5 col-md-5 col-lg-5 col-sm-offset-3 col-md-offset-3 col-lg-offset-3">
+                    @Html.HiddenFor(m => m.reuseMatId)
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.minDiam, new { @class = "Label" })
+                        @Html.TextBoxFor(m => m.minDiam, new { @class = "form-control", @placeholder = "Innerdiameter (minst)", @maxlength = "20" })
+                        @Html.ValidationMessageFor(m => m.minDiam, "", new { @class = "Error" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.reusePercentage, new { @class = "Label" })
+                        @Html.TextBoxFor(m => m.reusePercentage, new { @class = "form-control", @placeholder = "Återanvändbar procent", @maxlength = "20" })
+                        @Html.ValidationMessageFor(m => m.reusePercentage, "", new { @class = "Error" })
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="row" style="margin-top:20px;">
+                <div class="well col-sm-10">
+                    <span>
+                        <a href="#" class="btn btn-success" onclick="saveReuseMat()">&nbsp;Spara&nbsp;</a>
+                        <a href="#" class="btn btn-default" onclick="toReuseMatList()">&nbsp;Till Listan&nbsp;</a>
+                    </span>
+                    <div class="col-md-12" id="ErrorTextOrder" style="color:red">
+                        <span>@ViewBag.errorTxt</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-waitingfor/1.2.7/bootstrap-waitingfor.min.js"></script>
+<script>
+
+    var saveReuseMat = function () {
+        $("#ErrorTextOrder").html("");
+        if (!$("#myForm").valid())
+            return;
+        waitingDialog.show('Sparar värden....');
+        var myformdata = $("#myForm").serialize();
+        $.post("/ReuseMat/saveReuseMat", myformdata, function (response) {
+            waitingDialog.hide();
+            if (response.error == "identError") {
+                window.location.href = "/Home/Login";
+                return;
+            }
+            if (response.message != "")
+                $("#ErrorTextOrder").html("<span>" + response.message + "</span>");
+            else if (response.errMessage != "")
+                $("#ErrorTextOrder").html("<span>" + response.errMessage + " (Felkod : " + response.errCode + ")</span>");
+            else {
+                $("#reuseMatId").val(response.reuseMatId);
+            }
+        }, "json");
+    }
+
+    var toReuseMatList = function () {
+        $("#gReuseMatListDiv").show();
+        $("#gReuseMatDetailDiv").empty();
+        $("#gReuseMatDetailDiv").hide();
+        getRegisteredReuseMat();
+    }
+</script>
+
+
+
+

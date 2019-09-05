@@ -1,0 +1,1051 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:49962/SmServ.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SManApi" />
+  <xs:import schemaLocation="http://localhost:49962/SmServ.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/Message" />
+  <xs:import schemaLocation="http://localhost:49962/SmServ.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://localhost:49962/SmServ.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/System.Collections.Generic" />
+  <xs:element name="login">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AnvID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pwd" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="loginResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="loginResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getReparator">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ident" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getReparatorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/SManApi" minOccurs="0" name="getReparatorResult" nillable="true" type="q1:ReparatorCL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getReparators">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ident" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getReparatorsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/SManApi" minOccurs="0" name="getReparatorsResult" nillable="true" type="q2:ArrayOfReparatorCL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="gGetReparators">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ident" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="AnvID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="gGetReparatorsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/SManApi" minOccurs="0" name="gGetReparatorsResult" nillable="true" type="q3:ArrayOfReparatorCL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getServHuvForUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ident" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getServHuvForUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/SManApi" minOccurs="0" name="getServHuvForUserResult" nillable="true" type="q4:ArrayOfServiceHuvudCL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getServHuv">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ident" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vartOrdernr" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getServHuvResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/SManApi" minOccurs="0" name="getServHuvResult" nillable="true" type="q5:ServiceHuvudCL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAllServRad">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ident" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vartOrdernr" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAllServRadResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/SManApi" minOccurs="0" name="getAllServRadResult" nillable="true" type="q6:ArrayOfServiceRadListCL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getServRad">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ident" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vartOrdernr" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="radnr" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getServRadResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/SManApi" minOccurs="0" name="getServRadResult" nillable="true" type="q7:ServiceRadCL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="saveServRad">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ident" nillable="true" type="xs:string" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/SManApi" minOccurs="0" name="sr" nillable="true" type="q8:ServiceRadCL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="saveServRadResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/SManApi" minOccurs="0" name="saveServRadResult" nillable="true" type="q9:ServiceRadCL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getVentil">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ident" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ventilID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getVentilResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/SManApi" minOccurs="0" name="getVentilResult" nillable="true" type="q10:VentilCL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getVentilsForCust">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ident" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="KundID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="position" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="IDnr" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ventiltyp" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="fabrikat" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="anlaggningsnr" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getVentilsForCustResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/SManApi" minOccurs="0" name="getVentilsForCustResult" nillable="true" type="q11:ArrayOfVentilCL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="saveVentil">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ident" nillable="true" type="xs:string" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/SManApi" minOccurs="0" name="v" nillable="true" type="q12:VentilCL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="saveVentilResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/SManApi" minOccurs="0" name="saveVentilResult" nillable="true" type="q13:VentilCL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getVentilKategorier">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ident" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getVentilKategorierResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/SManApi" minOccurs="0" name="getVentilKategorierResult" nillable="true" type="q14:ArrayOfVentilKategoriCL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getFabrikat">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ident" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getFabrikatResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/SManApi" minOccurs="0" name="getFabrikatResult" nillable="true" type="q15:ArrayOfFabrikatCL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getDn">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ident" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getDnResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/SManApi" minOccurs="0" name="getDnResult" nillable="true" type="q16:ArrayOfDnCL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getPn">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ident" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getPnResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/SManApi" minOccurs="0" name="getPnResult" nillable="true" type="q17:ArrayOfPnCL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getArtList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ident" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ArtnrFilter" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ArtnamnFilter" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getArtListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/SManApi" minOccurs="0" name="getArtListResult" nillable="true" type="q18:ArrayOfArtikelCL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getArtikel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ident" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Artnr" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getArtikelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/SManApi" minOccurs="0" name="getArtikelResult" nillable="true" type="q19:ArtikelCL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getReservdelsForServiceRad">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ident" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="VartOrdernr" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="RadNr" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getReservdelsForServiceRadResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/SManApi" minOccurs="0" name="getReservdelsForServiceRadResult" nillable="true" type="q20:ArrayOfReservdelCL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getReservdel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ident" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="VartOrdernr" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="RadNr" type="xs:int" />
+        <xs:element minOccurs="0" name="ReservNr" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getReservdelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/SManApi" minOccurs="0" name="getReservdelResult" nillable="true" type="q21:ReservdelCL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="saveReservdel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ident" nillable="true" type="xs:string" />
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/SManApi" minOccurs="0" name="reservdel" nillable="true" type="q22:ReservdelCL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="saveReservdelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/SManApi" minOccurs="0" name="saveReservdelResult" nillable="true" type="q23:ReservdelCL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getOpenDates">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ident" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="SrAltKey" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getOpenDatesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/SManApi" minOccurs="0" name="getOpenDatesResult" nillable="true" type="q24:ArrayOfOpenDateCL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getOpenDatesSH">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ident" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vartOrdernr" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getOpenDatesSHResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/SManApi" minOccurs="0" name="getOpenDatesSHResult" nillable="true" type="q25:ArrayOfOpenDateCL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getServRadRepTid">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ident" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getServRadRepTidResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/SManApi" minOccurs="0" name="getServRadRepTidResult" nillable="true" type="q26:ServRadRepTidCL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getServRadRepTidForServiceRad">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ident" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="AnvID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="srAltKey" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getServRadRepTidForServiceRadResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/SManApi" minOccurs="0" name="getServRadRepTidForServiceRadResult" nillable="true" type="q27:ArrayOfServRadRepTidCL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getServRadRepTidForSR">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ident" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="srAltKey" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getServRadRepTidForSRResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/SManApi" minOccurs="0" name="getServRadRepTidForSRResult" nillable="true" type="q28:ArrayOfServRadRepTidCL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="saveServRadRepTid">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ident" nillable="true" type="xs:string" />
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/SManApi" minOccurs="0" name="srt" nillable="true" type="q29:ServRadRepTidCL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="saveServRadRepTidResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/SManApi" minOccurs="0" name="saveServRadRepTidResult" nillable="true" type="q30:ServRadRepTidCL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="isOpen">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ident" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="VartOrdernr" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="isOpenResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="isOpenResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getReparatorsForServiceHuvud">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ident" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vartOrdernr" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getReparatorsForServiceHuvudResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/SManApi" minOccurs="0" name="getReparatorsForServiceHuvudResult" nillable="true" type="q31:ArrayOfReparatorCL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAlternateKey">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ident" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vartOrdernr" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="radnr" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAlternateKeyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getAlternateKeyResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="uploadPict">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.microsoft.com/Message" name="sPict" type="q32:StreamBody" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="uploadPictResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="uploadPictResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="savePicture">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ident" nillable="true" type="xs:string" />
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/SManApi" minOccurs="0" name="p" nillable="true" type="q33:PictureCL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="savePictureResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/SManApi" minOccurs="0" name="savePictureResult" nillable="true" type="q34:PictureCL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getPicture">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ident" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vartOrdernr" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="radnr" type="xs:int" />
+        <xs:element minOccurs="0" name="bildNr" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getPictureResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/SManApi" minOccurs="0" name="getPictureResult" nillable="true" type="q35:PictureCL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="downLoadPict">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pictIdent" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="downLoadPictResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.microsoft.com/Message" name="downLoadPictResult" type="q36:StreamBody" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="deletePicture">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ident" nillable="true" type="xs:string" />
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/SManApi" minOccurs="0" name="p" nillable="true" type="q37:PictureCL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="deletePictureResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/SManApi" minOccurs="0" name="deletePictureResult" nillable="true" type="q38:PictureCL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getPicturesForServiceRad">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ident" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vartOrdernr" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="radnr" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getPicturesForServiceRadResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/SManApi" minOccurs="0" name="getPicturesForServiceRadResult" nillable="true" type="q39:ArrayOfPictureCL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAllSttText">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ident" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAllSttTextResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/SManApi" minOccurs="0" name="getAllSttTextResult" nillable="true" type="q40:ArrayOfStandardTextCL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getPictCategories">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ident" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Step" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getPictCategoriesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/SManApi" minOccurs="0" name="getPictCategoriesResult" nillable="true" type="q41:ArrayOfPictCatCL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updatePictMetadata">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ident" nillable="true" type="xs:string" />
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/SManApi" minOccurs="0" name="p" nillable="true" type="q42:PictureCL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updatePictMetadataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/SManApi" minOccurs="0" name="updatePictMetadataResult" nillable="true" type="q43:PictureCL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getVersion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ident" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getVersionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/SManApi" minOccurs="0" name="getVersionResult" nillable="true" type="q44:VersionCL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SumHoursForServRad">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ident" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="srAltKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="AnvID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SumHoursForServRadResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SumHoursForServRadResult" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="deleteReservdel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ident" nillable="true" type="xs:string" />
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/SManApi" minOccurs="0" name="reservdel" nillable="true" type="q45:ReservdelCL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="deleteReservdelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="deleteReservdelResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAllTimeForOrder">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ident" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vartOrdernr" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAllTimeForOrderResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/SManApi" minOccurs="0" name="getAllTimeForOrderResult" nillable="true" type="q46:ArrayOfRepTidListCL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getTimeTypes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ident" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="hosKund" type="xs:boolean" />
+        <xs:element minOccurs="0" name="paVerkstad" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getTimeTypesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/SManApi" minOccurs="0" name="getTimeTypesResult" nillable="true" type="q47:ArrayOfTimeTypeCL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getTimeTypesForOrder">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ident" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vartOrdernr" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getTimeTypesForOrderResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/SManApi" minOccurs="0" name="getTimeTypesForOrderResult" nillable="true" type="q48:ArrayOfTimeTypeCL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getTimeRegVersion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ident" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vartOrdernr" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getTimeRegVersionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getTimeRegVersionResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getSalart">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ident" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="forServiceDetalj" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getSalartResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/SManApi" minOccurs="0" name="getSalartResult" nillable="true" type="q49:ArrayOfSalartCL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getRepKat">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ident" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getRepKatResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/SManApi" minOccurs="0" name="getRepKatResult" nillable="true" type="q50:ArrayOfRepKatCL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="saveServHuvRepTid">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ident" nillable="true" type="xs:string" />
+        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/SManApi" minOccurs="0" name="sht" nillable="true" type="q51:ServHuvRepTidCL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="saveServHuvRepTidResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/SManApi" minOccurs="0" name="saveServHuvRepTidResult" nillable="true" type="q52:ServHuvRepTidCL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getServHuvRepTid">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ident" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getServHuvRepTidResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/SManApi" minOccurs="0" name="getServHuvRepTidResult" nillable="true" type="q53:ServHuvRepTidCL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getServHuvRepTidForSH">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ident" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vartOrdernr" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getServHuvRepTidForSHResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/SManApi" minOccurs="0" name="getServHuvRepTidForSHResult" nillable="true" type="q54:ArrayOfServHuvRepTidCL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getServHuvRepTidForShAnv">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ident" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vartOrdernr" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="anvID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getServHuvRepTidForShAnvResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/SManApi" minOccurs="0" name="getServHuvRepTidForShAnvResult" nillable="true" type="q55:ArrayOfServHuvRepTidCL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getDefaultRepKat">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ident" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="AnvID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="VartOrdernr" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getDefaultRepKatResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/SManApi" minOccurs="0" name="getDefaultRepKatResult" nillable="true" type="q56:RepKatCL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="generateTimeReg2Report">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ident" nillable="true" type="xs:string" />
+        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/SManApi" minOccurs="0" name="p" nillable="true" type="q57:TimeRep2ProcessCL" />
+        <xs:element minOccurs="0" name="bOverrideExisting" type="xs:boolean" />
+        <xs:element minOccurs="0" name="approve" type="xs:boolean" />
+        <xs:element xmlns:q58="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="timeRep2WeekIds" nillable="true" type="q58:ArrayOfint" />
+        <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/SManApi" minOccurs="0" name="kundEmails" nillable="true" type="q59:ArrayOfKundEmailCL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="generateTimeReg2ReportResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/SManApi" minOccurs="0" name="generateTimeReg2ReportResult" nillable="true" type="q60:TimeRep2ProcessCL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getTimeRep2ReportStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ident" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="VartOrdernr" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getTimeRep2ReportStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/SManApi" minOccurs="0" name="getTimeRep2ReportStatusResult" nillable="true" type="q61:TimeRep2ProcessCL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getTimeRep2Weeks">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ident" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="VartOrdernr" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getTimeRep2WeeksResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/SManApi" minOccurs="0" name="getTimeRep2WeeksResult" nillable="true" type="q62:ArrayOfTimeRep2WeekCL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getTimeRecordContactList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ident" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="VartOrdernr" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getTimeRecordContactListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/SManApi" minOccurs="0" name="getTimeRecordContactListResult" nillable="true" type="q63:ArrayOfKundEmailCL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="gGetGasketLevels">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ident" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="gGetGasketLevelsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/System.Collections.Generic" minOccurs="0" name="gGetGasketLevelsResult" nillable="true" type="q64:ArrayOfKeyValuePairOfintstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="saveGasketLevel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ident" nillable="true" type="xs:string" />
+        <xs:element xmlns:q65="http://schemas.datacontract.org/2004/07/SManApi" minOccurs="0" name="reparator" nillable="true" type="q65:ReparatorCL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="saveGasketLevelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q66="http://schemas.datacontract.org/2004/07/SManApi" minOccurs="0" name="saveGasketLevelResult" nillable="true" type="q66:ReparatorCL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="saveFabrikat">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ident" nillable="true" type="xs:string" />
+        <xs:element xmlns:q67="http://schemas.datacontract.org/2004/07/SManApi" minOccurs="0" name="f" nillable="true" type="q67:FabrikatCL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="saveFabrikatResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q68="http://schemas.datacontract.org/2004/07/SManApi" minOccurs="0" name="saveFabrikatResult" nillable="true" type="q68:FabrikatCL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="saveDn">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ident" nillable="true" type="xs:string" />
+        <xs:element xmlns:q69="http://schemas.datacontract.org/2004/07/SManApi" minOccurs="0" name="d" nillable="true" type="q69:DnCL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="saveDnResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q70="http://schemas.datacontract.org/2004/07/SManApi" minOccurs="0" name="saveDnResult" nillable="true" type="q70:DnCL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="savePn">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ident" nillable="true" type="xs:string" />
+        <xs:element xmlns:q71="http://schemas.datacontract.org/2004/07/SManApi" minOccurs="0" name="p" nillable="true" type="q71:PnCL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="savePnResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q72="http://schemas.datacontract.org/2004/07/SManApi" minOccurs="0" name="savePnResult" nillable="true" type="q72:PnCL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="uploadDrawing">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q73="http://schemas.microsoft.com/Message" name="sPict" type="q73:StreamBody" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="uploadDrawingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="uploadDrawingResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="saveDrawing">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ident" nillable="true" type="xs:string" />
+        <xs:element xmlns:q74="http://schemas.datacontract.org/2004/07/SManApi" minOccurs="0" name="d" nillable="true" type="q74:DrawingCL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="saveDrawingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q75="http://schemas.datacontract.org/2004/07/SManApi" minOccurs="0" name="saveDrawingResult" nillable="true" type="q75:DrawingCL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getDrawing">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ident" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ventilId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ritningNo" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getDrawingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q76="http://schemas.datacontract.org/2004/07/SManApi" minOccurs="0" name="getDrawingResult" nillable="true" type="q76:DrawingCL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="downLoadDrawing">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="drawingIdent" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="downLoadDrawingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q77="http://schemas.microsoft.com/Message" name="downLoadDrawingResult" type="q77:StreamBody" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="deleteDrawing">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ident" nillable="true" type="xs:string" />
+        <xs:element xmlns:q78="http://schemas.datacontract.org/2004/07/SManApi" minOccurs="0" name="d" nillable="true" type="q78:DrawingCL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="deleteDrawingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q79="http://schemas.datacontract.org/2004/07/SManApi" minOccurs="0" name="deleteDrawingResult" nillable="true" type="q79:DrawingCL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getDrawingsForVentil">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ident" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ventilId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getDrawingsForVentilResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q80="http://schemas.datacontract.org/2004/07/SManApi" minOccurs="0" name="getDrawingsForVentilResult" nillable="true" type="q80:ArrayOfDrawingCL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updateDrawingMetaData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ident" nillable="true" type="xs:string" />
+        <xs:element xmlns:q81="http://schemas.datacontract.org/2004/07/SManApi" minOccurs="0" name="d" nillable="true" type="q81:DrawingCL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updateDrawingMetaDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q82="http://schemas.datacontract.org/2004/07/SManApi" minOccurs="0" name="updateDrawingMetaDataResult" nillable="true" type="q82:DrawingCL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

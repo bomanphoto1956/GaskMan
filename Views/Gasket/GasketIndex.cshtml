@@ -1,0 +1,60 @@
+﻿@{
+    ViewBag.Title = "GasketIndex";
+}
+<div id="gGasketListDiv">
+    <div class="well" style="margin-top:5px;">
+        <div class="col-md-10 col-sm-10 col-lg-10">
+            <h3 style="margin-top:0px; color:darkseagreen">Registrerade packningar</h3>
+        </div>
+
+        <div class="clearfix"></div>
+
+    </div>
+
+    <div id="gGasketDTDiv"></div>
+    <br />
+
+
+    <div class="well">
+        <span>
+            <a href="#" class="btn btn-success" onclick="selectGasket('0')">&nbsp;Ny&nbsp;</a><button type="button" class="btn btn-default" style="margin-left:10px;" onclick="getRegisteredGasket()">
+                <span class="glyphicon glyphicon-refresh"></span> Refresh
+            </button>
+        </span>
+        <span id="ErrorTextId" style="color:red; margin-bottom:5px; margin-left:10px">
+        </span>
+    </div>
+</div>
+
+<div id="gGasketDetailDiv">
+</div>
+
+
+<script>
+
+
+    $(document).ready(function () {
+        getRegisteredGasket();
+    });
+
+
+
+    var getRegisteredGasket = function () {        
+        $.post("/Gasket/getRegisteredGasket", function (response) {
+            $("#gGasketDTDiv").empty();
+            $("#gGasketDTDiv").append(response);        
+        }, "html");
+    }
+
+    var selectGasket = function (gasketId) {
+        var data = "gasketId=" + gasketId;
+        $.post("/Gasket/selectGasket", data, function (response) {
+            $("#gGasketListDiv").hide();
+            $("#gGasketDetailDiv").empty();
+            $("#gGasketDetailDiv").append(response);
+            $("#gGasketDetailDiv").show();
+        }, "html");
+    }
+
+</script>
+
