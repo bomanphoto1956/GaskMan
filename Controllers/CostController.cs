@@ -33,7 +33,8 @@ namespace GaskMan.Controllers
                 errorTxt = wCost.ErrMessage;
             }
             ViewBag.errorTxt = errorTxt;
-            return View(cc);            
+            return View(cc);        
+            //asdfasdf
         }
 
         [HttpPost]
